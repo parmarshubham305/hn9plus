@@ -1,0 +1,85 @@
+.top-header{
+    ul{
+        li{
+            a{
+                color:#ffffff;
+                &:hover,&:focus,&:active{
+                    color:$primary;
+                }
+            }
+        }
+    }
+}
+.navbar{
+    .navbar-brand{
+        max-width:230px;
+    }
+    .navbar-nav {
+        .nav-item{
+            .nav-link{
+                @include fontSize(20px);
+                font-family: 'poppinssemibold';
+                padding:1rem 2rem;
+                color:#282826;
+                &:hover,&:active,&:focus ,&.active{
+                    color:$primary;
+                }
+            }
+            &:last-child{
+                .nav-link{padding: 1rem 0 1rem 2rem;}
+            }
+            .dropdown-menu{border:none;
+                .dropdown-item{
+                    background-color: #ffffff;
+                    @include fontSize(16px);
+                    font-family: 'poppinssemibold';
+                    &:hover,&:active,&:focus{
+                        color:$primary;
+                       
+                    }
+                }
+            }           
+        }
+    }
+    .navbar-toggler{
+        .hamburger-menu {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: space-between;
+            height: 2rem;
+            width: 2rem;
+            cursor: pointer;
+            .bar-top,.bar-middle,.bar-bottom {
+                height: 3px;
+                background: #000000;
+                border-radius: 5px;
+                margin: 3px 0;
+                transform-origin: left;
+                transition: all 0.8s;
+            }
+          
+        }
+        &:not(.collapsed){
+            .hamburger-menu {
+                .bar-top {
+                    transform: rotate(45deg);
+                }
+                .bar-middle {
+                    transform:translateX(1rem);
+                    opacity: 0;
+                }
+                .bar-bottom {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
+
+#footer{
+    ul{
+        li{
+            a{color: #fff;}
+        }
+    }
+}

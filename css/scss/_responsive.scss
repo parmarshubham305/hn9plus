@@ -1,0 +1,42 @@
+
+@include mq("tablet"){
+    .navbar{
+        .navbar-brand{
+            max-width:300px;
+        }
+        .navbar-nav {
+            .nav-item {
+                .dropdown-menu{
+                    border:1px solid #dddddd;
+                }
+            }
+           
+        }
+    }
+}
+
+
+@include mq-max("tablet"){
+    .navbar{
+        .navbar-nav {
+            .nav-item {
+                .nav-link{
+                    border-bottom: 1px solid #dddddd;
+                }
+            }
+        }
+    }
+    .navbar-collapse{
+        position: fixed;
+        display: block;
+        background: #ffffff;
+        width: 100vw;
+        left: -100%;
+        top: 148px;
+        height: 100vh;
+        @include transition(0.3s all ease);
+        &.show{
+            left: 0;
+        }
+    }
+}

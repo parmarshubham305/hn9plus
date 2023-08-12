@@ -1,0 +1,110 @@
+@use "sass:math";
+@use "sass:list";
+
+@function calculateRem($size) {
+    $remSize: '';
+    @if type-of($size)=='list' {
+        $size: list.nth($size, 1);
+        $remSize: #{math.div($size, 16px)}rem !important;
+    }
+    @else {
+        $remSize: #{math.div($size, 16px)}rem;
+    }
+    @return $remSize;
+}
+
+@mixin fontSize($size) {
+    font-size: $size; //Fallback in px
+    font-size: calculateRem($size);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+body {
+    margin: 0;
+    padding: 0;
+    @include fontSize(18px);
+    font-family: 'poppinsregular', 'sans-serif';
+    background-color: $light;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main{
+    flex-grow: 1;
+}
+input,select,
+.btn,button {@include radius(50px);
+    &:focus {
+        box-shadow: none !important;
+        outline: none !important;
+        &:not(:focus-visible){
+            box-shadow: none !important;
+            outline: none !important;
+        }
+    }
+    &:not(.collapsed){
+        box-shadow: none !important;
+        outline: none !important;
+    }
+}
+
+a {
+    @include transition(0.4s all ease);
+    text-decoration: none;
+    outline: none;
+    display:inline-block;
+}
+
+.form-control ,.form-select{
+    font-family: 'poppinsregular', sans-serif;
+}
+
+.badge {
+    font-weight: normal;
+}
+
+h1{@include fontSize(30px);font-family: 'poppinssemibold';color: $secondary;}
+h2{@include fontSize(24px);font-family: 'poppinsbold';}
+p{@include fontSize(18px);font-family: 'OpenSans-Regular';}
+
+a {
+    @include transition(all 0.3s ease);
+    color:$secondary;
+    &:hover,
+    &:focus,
+    &:active {
+        color: $primary;
+    }
+}
+.spaceing_class{padding:4rem 0;}
+/***** Button ******/
+.btn {
+    @include transition(all 0.3s ease);
+    &:focus,
+    &.focus,
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    &:not(:disabled):not(.disabled):active:focus {
+        @include box-shadow(0, 0, 0, 0, #ffffff);
+    }
+}
+.btn-primary{
+    color:#ffffff;
+    background: $primary;
+    padding: 0.6rem 1.5rem;
+    &:hover,&:focus,&:active{
+        background: lighten($primary, 5%);
+        color: #ffffff;
+    }
+}
+// Spacing
+.spacing-y{
+  padding:2rem 0rem;
+  @include mq("tablet"){
+    padding:3.5rem 0rem;
+  }
+}
