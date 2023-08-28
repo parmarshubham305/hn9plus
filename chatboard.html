@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-xl border-bottom py-2 bg-white position-relative">
+    <nav class="navbar navbar-expand-xl border-bottom py-2 bg-white position-sticky top-0 z-2">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="images/logo.png" alt="site-logo" class="img-fluid" width="120">
@@ -49,15 +49,22 @@
                     </li>
                 </ul>
             </div>
-            <ul class="list-unstyled list-inline d-md-inline-block d-none">
-                <li class="list-inline-item">
-                    <a class="nav-link" href="#"><i class="far fa-lg fa-user"></i></a>
+            <ul class="list-unstyled list-inline d-md-inline-block d-none mb-0 nav-icons">
+                <li class="list-inline-item search">
+                    <a class="nav-link search-btn" href="#"><span class="fa-lg icon-search custom"></span></a>
+                    <span class="search-bar">
+                        <input class="form-control border " type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-primary rounded-0" type="submit"><span class="fa-lg icon-Search custom ms-0 fs-6"></span></button>
+                    </span>
                 </li>
                 <li class="list-inline-item">
-                    <a class="nav-link" href="#"><i class="far fa-lg fa-user"></i></a>
+                    <a class="nav-link" href="#"><span class="fa-lg icon-Chat custom"></span></a>
                 </li>
                 <li class="list-inline-item">
-                    <a class="nav-link" href="#"><i class="far fa-lg fa-user"></i></a>
+                    <a class="nav-link" href="#"><span class="fa-lg icon-cart custom"></span></a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="nav-link" href="/login.html"><span class="fa-lg icon-user custom"></span></a>
                 </li>
             </ul>
         </div>

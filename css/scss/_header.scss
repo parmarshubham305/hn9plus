@@ -74,6 +74,22 @@
             }
         }
     }
+    .nav-icons{
+        .custom{
+            @include fontSize(30px);
+            margin-left:0.8rem;
+        }
+    }
+    .search-bar{
+        position: absolute;
+        top: 80%;
+        right: 23%;
+        display: none;
+        box-shadow:6px 4px 7px 3px #3d3d3d4d;
+        &.search-on{
+            display: flex;
+        }
+    }
 }
 
 #footer{

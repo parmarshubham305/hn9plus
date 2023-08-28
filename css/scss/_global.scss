@@ -62,7 +62,15 @@ a {
 .form-control ,.form-select{
     font-family: 'poppinsregular', sans-serif;
 }
-
+.form-check{
+    input,label{cursor: pointer;}
+}
+.form-control{border: unset;border-bottom:1px solid $border; border-radius: unset;font-family: 'OpenSans-Regular';
+    &::placeholder{color: $border;}
+    &:focus, &:active{
+        border-color:$primary !important;
+    }
+}
 .badge {
     font-weight: normal;
 }
@@ -101,10 +109,30 @@ a {
         color: #ffffff;
     }
 }
+.btn-outline-primary{
+    &:hover,&:focus,&:active{
+        background: $primary;
+        color: #ffffff;
+    }
+}
 // Spacing
 .spacing-y{
   padding:2rem 0rem;
   @include mq("tablet"){
     padding:3.5rem 0rem;
   }
+}
+
+// section header
+.section-header{
+    position: relative;
+    &:after{
+        content:"";
+        position: absolute;
+        width: 15%;
+        height:5px;
+        background:$primary;
+        bottom: 0;
+        left: 0;
+    }
 }
