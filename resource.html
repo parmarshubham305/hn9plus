@@ -1,0 +1,755 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HN9+</title>
+    <link rel="stylesheet" href="thirdparty/css/all.min.css">
+    <link rel="stylesheet" href="thirdparty/css/slick.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
+    <script type="text/javascript" src="thirdparty/js/jquery.min.js"></script>
+    <script type="text/javascript" src="thirdparty/js/all.min.js"></script>
+    <script type="text/javascript" src="thirdparty/js/slick.min.js"></script>
+    <script type="text/javascript" src="js/theme.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-xl border-bottom py-2 bg-white position-sticky top-0 z-2">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="site-logo" class="img-fluid" width="120">
+            </a>
+            <button class="navbar-toggler collapsed border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="hamburger-menu">
+                    <span class="bar-top"></span>
+                    <span class="bar-middle"></span>
+                    <span class="bar-bottom"></span>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse h-100" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Our Site</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Our Service </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact us</a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="list-unstyled list-inline d-md-inline-block d-none mb-0 nav-icons">
+                <li class="list-inline-item search">
+                    <a class="nav-link search-btn" href="#"><span class="fa-lg icon-search custom"></span></a>
+                    <span class="search-bar">
+                        <input class="form-control border " type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-primary rounded-0" type="submit"><span class="fa-lg icon-Search custom ms-0 fs-6"></span></button>
+                    </span>
+                </li>
+                <li class="list-inline-item">
+                    <a class="nav-link" href="#"><span class="fa-lg icon-Chat custom"></span></a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="nav-link" href="#"><span class="fa-lg icon-cart custom"></span></a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="nav-link" href="/login.html"><span class="fa-lg icon-user custom"></span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="resource-section spacing-y">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <button class="btn btn-secondary px-3 mb-3 float-end d-md-none d-block" type="button" id="asdasd" data-bs-toggle="offcanvas" data-bs-target="#resourceoffcanvas" aria-controls="resourceoffcanvas">
+                            Filter <i class="fa-solid fa-filter ms-2"></i>
+                        </button>
+                        <div class="filtercanvas " tabindex="-1" id="resourceoffcanvas" aria-labelledby="resourceoffcanvas">
+                            <div class="card rounded-3 filter-card">
+                                <div class="card-header border-0 py-3 px-md-5  d-flex align-items-center bg-primary">
+                                    <h4 class="mb-0 text-white">Filters</h4>
+                                    <button type="button" class="btn-close text-white d-md-none d-block ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                <div class="card-body px-lg-5 px-3 py-3 overflow-auto">
+                                    <div class="accordion">
+                                        <div class="accordion-item border-0 ">
+                                            <h2 class="accordion-header" id="filter_zero">
+                                                <button class="accordion-button filter-accordion px-0 bg-white text-dark py-3" type="button" data-bs-toggle="collapse" data-bs-target="#filter_graphics" aria-expanded="true" aria-controls="filter_graphics"> Graphics </button>
+                                            </h2>
+                                            <div id="filter_graphics" class="accordion-collapse collapse show" aria-labelledby="filter_zero">
+                                                <div class="accordion-body p-0 pb-3">
+                                                    <div class="form-check mb-2 position-relative">
+                                                        <input class="form-check-input" type="checkbox" id="graphicdesigner">
+                                                        <label class="form-check-label ps-2" for="graphicdesigner"> Graphic Designer </label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="checkbox" id="videoeditor">
+                                                        <label class="form-check-label ps-2" for="videoeditor">Video Editor</label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="checkbox"  id="uidesigner">
+                                                        <label class="form-check-label ps-2" for="uidesigner"> UI Designer</label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="checkbox"  id="3D">
+                                                        <label class="form-check-label ps-2" for="3D">3D Designer</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item border-0 ">
+                                            <h2 class="accordion-header" id="filter_one">
+                                                <button class="accordion-button filter-accordion px-0 bg-white text-dark py-3"
+                                                    type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#filter_frontend"
+                                                    aria-expanded="true" aria-controls="filter_frontend">
+                                                    Frontend
+                                                </button>
+                                            </h2>
+                                            <div id="filter_frontend" class="accordion-collapse collapse show" aria-labelledby="filter_one">
+                                                <div class="accordion-body p-0 pb-3">
+                                                    <div class="form-check mb-2 position-relative">
+                                                        <input class="form-check-input" type="checkbox"  id="WebDesigner">
+                                                        <label class="form-check-label ps-2" for="WebDesigner">Web Designer</label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="checkbox"  id="checkAngular">
+                                                        <label class="form-check-label ps-2" for="checkAngular"> Angular JS</label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="checkbox" 
+                                                            id="checkView">
+                                                        <label class="form-check-label ps-2" for="checkView">
+                                                            Vue JS
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="checkbox" 
+                                                            id="checkReact">
+                                                        <label class="form-check-label ps-2" for="checkReact">
+                                                            React JS
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="checkbox" 
+                                                            id="checkJavascript">
+                                                        <label class="form-check-label ps-2" for="checkJavascript">
+                                                            JavaScript
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="checkbox" 
+                                                            id="checktypeJs">
+                                                        <label class="form-check-label ps-2" for="checktypeJs">
+                                                            Type JS
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="checkbox" 
+                                                            id="checknextJs">
+                                                        <label class="form-check-label ps-2" for="checknextJs">
+                                                            Next JS
+                                                        </label>
+                                                    </div>
+                                                
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item border-0">
+                                            <h2 class="accordion-header" id="filter_two">
+                                                <button
+                                                    class="accordion-button filter-accordion px-0 bg-white text-dark py-3"
+                                                    type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#filter_backend"
+                                                    aria-expanded="true" aria-controls="filter_backend">
+                                                    Backend
+                                                </button>
+                                            </h2>
+                                            <div id="filter_backend"
+                                                class="accordion-collapse collapse show"
+                                                aria-labelledby="filter_two">
+                                                <div class="accordion-body p-0 pb-3">
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="checkbox" 
+                                                            id="checkNode">
+                                                        <label class="form-check-label ps-2" for="checkNode">
+                                                            Node JS
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="checkbox" 
+                                                            id="checkdotNet">
+                                                        <label class="form-check-label ps-2" for="checkdotNet">
+                                                            .Net
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="checkbox" 
+                                                            id="checkAsp">
+                                                        <label class="form-check-label ps-2" for="checkAsp">
+                                                            ASP .Net
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="checkbox" 
+                                                            id="checkCsarp">
+                                                        <label class="form-check-label ps-2" for="checkCsarp">
+                                                            C#
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="checkbox" 
+                                                            id="checkCplus">
+                                                        <label class="form-check-label ps-2" for="checkCplus">
+                                                            C++
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="checkbox" 
+                                                            id="checkJava">
+                                                        <label class="form-check-label ps-2" for="checkJava">
+                                                            Java
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="checkbox" 
+                                                            id="checkPhp">
+                                                        <label class="form-check-label ps-2" for="checkPhp">
+                                                            PHP
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="checkbox" 
+                                                            id="checkPython">
+                                                        <label class="form-check-label ps-2" for="checkPython">
+                                                            Python
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="resource-select-box bg-white p-3 border rounded-4 mb-3 d-md-flex flex-wrap justify-content-between">
+                                    <h5 class="fw-bold mb-0">Johan Doe  <span class="fs-6 fw-normal">Web Designer</span></h5>
+                                    <p class="d-inline-block text-dark mb-0">Day/Hours  <strong> 4</strong></p>
+                                    <a href="#" class="btn text-danger float-end"> <i class="d-inline-block fa-regular fa-trash-can" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="resource-select-box bg-white p-3 border rounded-4 mb-3 d-md-flex flex-wrap justify-content-between">
+                                    <h5 class="fw-bold mb-0">Raj parmar  <span class="fs-6 fw-normal">Frontend Developer</span></h5>
+                                    <p class="d-inline-block text-dark mb-0">Day/Hours  <strong> 2</strong></p>
+                                    <a href="#" class="btn text-danger float-end"> <i class="d-inline-block fa-regular fa-trash-can" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="resource-select-box bg-white p-3 border rounded-4 mb-3 d-md-flex flex-wrap justify-content-between">
+                                    <h5 class="fw-bold mb-0">Nike <span class="fs-6 fw-normal">Frontend Developer</span></h5>
+                                    <p class="d-inline-block text-dark mb-0">Day/Hours  <strong> 2</strong></p>
+                                    <a href="#" class="btn text-danger float-end"> <i class="d-inline-block fa-regular fa-trash-can" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-auto ms-auto text-lg-end text-center mb-4 ">
+                                <a href="#" class="btn btn-primary rounded-3 px-5">Submit </a>
+                            </div>
+                        </div>
+                        
+                        <div class="row hire-resource">
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card rounded-4 hire-box h-100">
+                                    <div class="card-header p-0 position-relative bg-transparent  border-0 border-0">
+                                        <picture>
+                                            <img src="images/resource/shapeborder.png" class="img-fluid shap-border w-100" alt="shape">
+                                            <img src="images/resource/shapbg.png" class="img-fluid position-relative w-100" alt="shape">
+                                        </picture>
+                                        <div class="shape">
+                                            <img src="images/resource/html.png" class="img-fluid" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="card-body text-center pt-4 pb-0 px-md-4">
+                                        <h3 class="text-secondary mb-0">Custom</h3>
+                                        <p class="text-secondary fw-semibold">$15/hr</p>
+                                        <p class="">HTML5 is a markup language used for structuring and presenting
+                                            content on the World Wide Web. </p>
+                                    </div>
+                                   <div class="card-footer bg-transparent border-0 m-auto pt-3 pb-4">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#resourceModal" id="hiremodal">Hire Resource</button>
+                                   </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card rounded-4 hire-box h-100">
+                                    <div class="card-header p-0 position-relative bg-transparent  border-0 border-0">
+                                        <picture>
+                                            <img src="images/resource/shapeborder.png" class="img-fluid shap-border w-100" alt="shape">
+                                            <img src="images/resource/shapbg.png" class="img-fluid position-relative w-100" alt="shape">
+                                        </picture>
+                                        <div class="shape">
+                                            <img src="images/resource/html.png" class="img-fluid" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="card-body text-center pt-4 pb-0 px-md-4">
+                                        <h3 class="text-secondary mb-0">HTML</h3>
+                                        <p class="text-secondary fw-semibold">$15/hr</p>
+                                        <p class="">HTML5 is a markup language used for structuring and presenting
+                                            content on the World Wide Web. </p>
+                                    </div>
+                                   <div class="card-footer bg-transparent border-0 m-auto pt-3 pb-4">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#resourceModal" id="hiremodal">Hire Resource</button>
+                                   </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card rounded-4 hire-box h-100">
+                                    <div class="card-header p-0 position-relative bg-transparent  border-0 border-0">
+                                        <picture>
+                                            <img src="images/resource/shapeborder.png" class="img-fluid shap-border w-100" alt="shape">
+                                            <img src="images/resource/shapbg.png" class="img-fluid position-relative w-100" alt="shape">
+                                        </picture>
+                                        <div class="shape">
+                                            <img src="images/resource/html.png" class="img-fluid" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="card-body text-center pt-4 pb-0 px-md-4">
+                                        <h3 class="text-secondary mb-0">CSS</h3>
+                                        <p class="text-secondary fw-semibold">$15/hr</p>
+                                        <p class="">CSS
+                                            content on the World Wide Web. </p>
+                                    </div>
+                                   <div class="card-footer bg-transparent border-0 m-auto pt-3 pb-4">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#resourceModal" id="hiremodal">Hire Resource</button>
+                                   </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card rounded-4 hire-box h-100">
+                                    <div class="card-header p-0 position-relative bg-transparent  border-0 border-0">
+                                        <picture>
+                                            <img src="images/resource/shapeborder.png" class="img-fluid shap-border w-100" alt="shape">
+                                            <img src="images/resource/shapbg.png" class="img-fluid position-relative w-100" alt="shape">
+                                        </picture>
+                                        <div class="shape">
+                                            <img src="images/resource/html.png" class="img-fluid" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="card-body text-center pt-4 pb-0 px-md-4">
+                                        <h3 class="text-secondary mb-0">Custom</h3>
+                                        <p class="text-secondary fw-semibold">$15/hr</p>
+                                        <p class="">HTML5 is a markup language used for structuring and presenting
+                                            content on the World Wide Web. </p>
+                                    </div>
+                                   <div class="card-footer bg-transparent border-0 m-auto pt-3 pb-4">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#resourceModal" id="hiremodal">Hire Resource</button>
+                                   </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card rounded-4 hire-box h-100">
+                                    <div class="card-header p-0 position-relative bg-transparent  border-0 border-0">
+                                        <picture>
+                                            <img src="images/resource/shapeborder.png" class="img-fluid shap-border w-100" alt="shape">
+                                            <img src="images/resource/shapbg.png" class="img-fluid position-relative w-100" alt="shape">
+                                        </picture>
+                                        <div class="shape">
+                                            <img src="images/resource/html.png" class="img-fluid" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="card-body text-center pt-4 pb-0 px-md-4">
+                                        <h3 class="text-secondary mb-0">Custom</h3>
+                                        <p class="text-secondary fw-semibold">$15/hr</p>
+                                        <p class="">HTML5 is a markup language used for structuring and presenting
+                                            content on the World Wide Web. </p>
+                                    </div>
+                                   <div class="card-footer bg-transparent border-0 m-auto pt-3 pb-4">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#resourceModal" id="hiremodal">Hire Resource</button>
+                                   </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card rounded-4 hire-box h-100">
+                                    <div class="card-header p-0 position-relative bg-transparent  border-0 border-0">
+                                        <picture>
+                                            <img src="images/resource/shapeborder.png" class="img-fluid shap-border w-100" alt="shape">
+                                            <img src="images/resource/shapbg.png" class="img-fluid position-relative w-100" alt="shape">
+                                        </picture>
+                                        <div class="shape">
+                                            <img src="images/resource/html.png" class="img-fluid" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="card-body text-center pt-4 pb-0 px-md-4">
+                                        <h3 class="text-secondary mb-0">Custom</h3>
+                                        <p class="text-secondary fw-semibold">$15/hr</p>
+                                        <p class="">HTML5 is a markup language used for structuring and presenting
+                                            content on the World Wide Web. </p>
+                                    </div>
+                                   <div class="card-footer bg-transparent border-0 m-auto pt-3 pb-4">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#resourceModal" id="hiremodal">Hire Resource</button>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="resourceModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="resourceModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header bg-light px-4">
+                    <h2 class="fw-bold text-secondary mb-0">Our Resource</h2>
+                    <button type="button" class="btn-close text-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-md-5 p-4 pe-md-0  position-relative">
+                    <div class="MultiCarousel" data-interval="1000" data-items="1,2,2,4"  data-slide="1"  data-items="1" id="resourceSlider">
+                        <div class="MultiCarousel-inner">
+                            <div class="item product-box">
+                                <div class="rounded-4 p-4 our-resorce-card bg-light border">
+                                    <div class="d-flex align-self-center mb-4">
+                                        <img class="img-fluid" height="80" width="80" src="images/user-grey.png" alt="">
+                                        <div class="align-self-center ms-4">
+                                            <h4 class="mb-0 fw-semibold">Alex Doe</h4>
+                                            <p class="mb-0 fw-bold">Frontend developer</p>
+                                        </div>
+                                        <p class="mb-0 ms-auto">5 Years</p>
+                                    </div>
+                                    <p class="mb-0"><strong>Skills:</strong> HTML, CSS, Bootstrap, JavaScript</p>
+                                    <div class="d-flex mt-4">
+                                        <button type="button" class="btn btn-outline-primary px-4">View Resume</button>
+                                        <button type="button" class="btn btn-primary px-4 ms-2" data-bs-toggle="collapse"
+                                            data-bs-target="#addService" aria-expanded="false">Add Service</button>
+                                    </div>
+                                    <div class="collapse mt-3" id="addService">
+                                        <div class="me-3">
+                                            <h6 class="fw-semibold">Hours / Day</h6>
+                                        </div>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bg-secondary btn-sm rounded-0 h-100" id="minus-btn"><i
+                                                        class="fa fa-minus text-white"></i></button>
+                                            </div>
+                                            <input type="number" id="qty_input"
+                                                class="form-control bg-white text-center form-control-sm border-bottom-0"
+                                                value="1" min="1">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bg-secondary btn-sm rounded-0 h-100" id="plus-btn"><i
+                                                        class="fa fa-plus text-white"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="check">
+                                        <i class="fa-solid fa-circle-check text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item product-box">
+                                <div class="rounded-4 p-4 our-resorce-card bg-light border">
+                                    <div class="d-flex align-self-center mb-4">
+                                        <img class="img-fluid" height="80" width="80" src="images/user-grey.png" alt="">
+                                        <div class="align-self-center ms-4">
+                                            <h4 class="mb-0 fw-semibold">Johan Doe</h4>
+                                            <p class="mb-0 fw-bold">Web Designer</p>
+                                        </div>
+                                        <p class="mb-0 ms-auto">7 Years</p>
+                                    </div>
+                                    <p class="mb-0"><strong>Skills:</strong> HTML, CSS, Bootstrap, JavaScript</p>
+                                    <div class="d-flex mt-4">
+                                        <button type="button" class="btn btn-outline-primary px-4">View Resume</button>
+                                        <button type="button" class="btn btn-primary px-4 ms-2" data-bs-toggle="collapse"
+                                            data-bs-target="#addService" aria-expanded="false">Add Service</button>
+                                    </div>
+                                    <div class="collapse mt-3" id="addService">
+                                        <div class="me-3">
+                                            <h6 class="fw-semibold">Hours / Day</h6>
+                                        </div>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bg-secondary btn-sm rounded-0 h-100" id="minus-btn"><i
+                                                        class="fa fa-minus text-white"></i></button>
+                                            </div>
+                                            <input type="number" id="qty_input"
+                                                class="form-control bg-white text-center form-control-sm border-bottom-0"
+                                                value="1" min="1">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bg-secondary btn-sm rounded-0 h-100" id="plus-btn"><i
+                                                        class="fa fa-plus text-white"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item product-box">
+                                <div class="rounded-4 p-4 our-resorce-card bg-light border">
+                                    <div class="d-flex align-self-center mb-4">
+                                        <img class="img-fluid" height="80" width="80" src="images/user-grey.png" alt="">
+                                        <div class="align-self-center ms-4">
+                                            <h4 class="mb-0 fw-semibold">Raj parmar</h4>
+                                            <p class="mb-0 fw-bold">Frontend developer</p>
+                                        </div>
+                                        <p class="mb-0 ms-auto">5 Years</p>
+                                    </div>
+                                    <p class="mb-0"><strong>Skills:</strong> HTML, CSS, Bootstrap, JavaScript</p>
+                                    <div class="d-flex mt-4">
+                                        <button type="button" class="btn btn-outline-primary px-4">View Resume</button>
+                                        <button type="button" class="btn btn-primary px-4 ms-2" data-bs-toggle="collapse"
+                                            data-bs-target="#addService" aria-expanded="false">Add Service</button>
+                                    </div>
+                                    <div class="collapse mt-3" id="addService">
+                                        <div class="me-3">
+                                            <h6 class="fw-semibold">Hours / Day</h6>
+                                        </div>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bg-secondary btn-sm rounded-0 h-100" id="minus-btn"><i
+                                                        class="fa fa-minus text-white"></i></button>
+                                            </div>
+                                            <input type="number" id="qty_input"
+                                                class="form-control bg-white text-center form-control-sm border-bottom-0"
+                                                value="1" min="1">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bg-secondary btn-sm rounded-0 h-100" id="plus-btn"><i
+                                                        class="fa fa-plus text-white"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item product-box">
+                                <div class="rounded-4 p-4 our-resorce-card bg-light border">
+                                    <div class="d-flex align-self-center mb-4">
+                                        <img class="img-fluid" height="80" width="80" src="images/user-grey.png" alt="">
+                                        <div class="align-self-center ms-4">
+                                            <h4 class="mb-0 fw-semibold">Nike</h4>
+                                            <p class="mb-0 fw-bold">Frontend developer</p>
+                                        </div>
+                                        <p class="mb-0 ms-auto">5 Years</p>
+                                    </div>
+                                    <p class="mb-0"><strong>Skills:</strong> HTML, CSS, Bootstrap, JavaScript</p>
+                                    <div class="d-flex mt-4">
+                                        <button type="button" class="btn btn-outline-primary px-4">View Resume</button>
+                                        <button type="button" class="btn btn-primary px-4 ms-2" data-bs-toggle="collapse"
+                                            data-bs-target="#addService" aria-expanded="false">Add Service</button>
+                                    </div>
+                                    <div class="collapse mt-3" id="addService">
+                                        <div class="me-3">
+                                            <h6 class="fw-semibold">Hours / Day</h6>
+                                        </div>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bg-secondary btn-sm rounded-0 h-100" id="minus-btn"><i
+                                                        class="fa fa-minus text-white"></i></button>
+                                            </div>
+                                            <input type="number" id="qty_input"
+                                                class="form-control bg-white text-center form-control-sm border-bottom-0"
+                                                value="1" min="1">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bg-secondary btn-sm rounded-0 h-100" id="plus-btn"><i
+                                                        class="fa fa-plus text-white"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item product-box">
+                                <div class="rounded-4 p-4 our-resorce-card bg-light border">
+                                    <div class="d-flex align-self-center mb-4">
+                                        <img class="img-fluid" height="80" width="80" src="images/user-grey.png" alt="">
+                                        <div class="align-self-center ms-4">
+                                            <h4 class="mb-0 fw-semibold">Nike</h4>
+                                            <p class="mb-0 fw-bold">Frontend developer</p>
+                                        </div>
+                                        <p class="mb-0 ms-auto">5 Years</p>
+                                    </div>
+                                    <p class="mb-0"><strong>Skills:</strong> HTML, CSS, Bootstrap, JavaScript</p>
+                                    <div class="d-flex mt-4">
+                                        <button type="button" class="btn btn-outline-primary px-4">View Resume</button>
+                                        <button type="button" class="btn btn-primary px-4 ms-2" data-bs-toggle="collapse"
+                                            data-bs-target="#addService" aria-expanded="false">Add Service</button>
+                                    </div>
+                                    <div class="collapse mt-3" id="addService">
+                                        <div class="me-3">
+                                            <h6 class="fw-semibold">Hours / Day</h6>
+                                        </div>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bg-secondary btn-sm rounded-0 h-100" id="minus-btn"><i
+                                                        class="fa fa-minus text-white"></i></button>
+                                            </div>
+                                            <input type="number" id="qty_input"
+                                                class="form-control bg-white text-center form-control-sm border-bottom-0"
+                                                value="1" min="1">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bg-secondary btn-sm rounded-0 h-100" id="plus-btn"><i
+                                                        class="fa fa-plus text-white"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item product-box">
+                                <div class="rounded-4 p-4 our-resorce-card bg-light border">
+                                    <div class="d-flex align-self-center mb-4">
+                                        <img class="img-fluid" height="80" width="80" src="images/user-grey.png" alt="">
+                                        <div class="align-self-center ms-4">
+                                            <h4 class="mb-0 fw-semibold">Nike</h4>
+                                            <p class="mb-0 fw-bold">Frontend developer</p>
+                                        </div>
+                                        <p class="mb-0 ms-auto">5 Years</p>
+                                    </div>
+                                    <p class="mb-0"><strong>Skills:</strong> HTML, CSS, Bootstrap, JavaScript</p>
+                                    <div class="d-flex mt-4">
+                                        <button type="button" class="btn btn-outline-primary px-4">View Resume</button>
+                                        <button type="button" class="btn btn-primary px-4 ms-2" data-bs-toggle="collapse"
+                                            data-bs-target="#addService" aria-expanded="false">Add Service</button>
+                                    </div>
+                                    <div class="collapse mt-3" id="addService">
+                                        <div class="me-3">
+                                            <h6 class="fw-semibold">Hours / Day</h6>
+                                        </div>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bg-secondary btn-sm rounded-0 h-100" id="minus-btn"><i
+                                                        class="fa fa-minus text-white"></i></button>
+                                            </div>
+                                            <input type="number" id="qty_input"
+                                                class="form-control bg-white text-center form-control-sm border-bottom-0"
+                                                value="1" min="1">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bg-secondary btn-sm rounded-0 h-100" id="plus-btn"><i
+                                                        class="fa fa-plus text-white"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item product-box">
+                                <div class="rounded-4 p-4 our-resorce-card bg-light border">
+                                    <div class="d-flex align-self-center mb-4">
+                                        <img class="img-fluid" height="80" width="80" src="images/user-grey.png" alt="">
+                                        <div class="align-self-center ms-4">
+                                            <h4 class="mb-0 fw-semibold">Nike</h4>
+                                            <p class="mb-0 fw-bold">Frontend developer</p>
+                                        </div>
+                                        <p class="mb-0 ms-auto">5 Years</p>
+                                    </div>
+                                    <p class="mb-0"><strong>Skills:</strong> HTML, CSS, Bootstrap, JavaScript</p>
+                                    <div class="d-flex mt-4">
+                                        <button type="button" class="btn btn-outline-primary px-4">View Resume</button>
+                                        <button type="button" class="btn btn-primary px-4 ms-2" data-bs-toggle="collapse"
+                                            data-bs-target="#addService" aria-expanded="false">Add Service</button>
+                                    </div>
+                                    <div class="collapse mt-3" id="addService">
+                                        <div class="me-3">
+                                            <h6 class="fw-semibold">Hours / Day</h6>
+                                        </div>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bg-secondary btn-sm rounded-0 h-100" id="minus-btn"><i
+                                                        class="fa fa-minus text-white"></i></button>
+                                            </div>
+                                            <input type="number" id="qty_input"
+                                                class="form-control bg-white text-center form-control-sm border-bottom-0"
+                                                value="1" min="1">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bg-secondary btn-sm rounded-0 h-100" id="plus-btn"><i
+                                                        class="fa fa-plus text-white"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item product-box">
+                                <div class="rounded-4 p-4 our-resorce-card bg-light border">
+                                    <div class="d-flex align-self-center mb-4">
+                                        <img class="img-fluid" height="80" width="80" src="images/user-grey.png" alt="">
+                                        <div class="align-self-center ms-4">
+                                            <h4 class="mb-0 fw-semibold">Nike</h4>
+                                            <p class="mb-0 fw-bold">Frontend developer</p>
+                                        </div>
+                                        <p class="mb-0 ms-auto">5 Years</p>
+                                    </div>
+                                    <p class="mb-0"><strong>Skills:</strong> HTML, CSS, Bootstrap, JavaScript</p>
+                                    <div class="d-flex mt-4">
+                                        <button type="button" class="btn btn-outline-primary px-4">View Resume</button>
+                                        <button type="button" class="btn btn-primary px-4 ms-2" data-bs-toggle="collapse"
+                                            data-bs-target="#addService" aria-expanded="false">Add Service</button>
+                                    </div>
+                                    <div class="collapse mt-3" id="addService">
+                                        <div class="me-3">
+                                            <h6 class="fw-semibold">Hours / Day</h6>
+                                        </div>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bg-secondary btn-sm rounded-0 h-100" id="minus-btn"><i
+                                                        class="fa fa-minus text-white"></i></button>
+                                            </div>
+                                            <input type="number" id="qty_input"
+                                                class="form-control bg-white text-center form-control-sm border-bottom-0"
+                                                value="1" min="1">
+                                            <div class="input-group-prepend">
+                                                <button class="btn bg-secondary btn-sm rounded-0 h-100" id="plus-btn"><i
+                                                        class="fa fa-plus text-white"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev leftLst over"><span
+                            class="carousel-control-prev-icon"></span></button><button
+                        class="carousel-control-next rightLst"><span
+                            class="carousel-control-next-icon"></span></button>
+                    </div>
+
+                    
+                    <div class="pt-3 text-center">
+                        <a href="#" class="btn btn-success btn-lg px-md-4">Submit Resources </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <div id="footer" class="bg-secondary py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 order-md-1 order-2 text-md-start text-center">
+                    <p class="mb-0 text-white">Copyright @2023. All rights reserved</p>
+                </div>
+                <div class="col-md-6 order-md-2 oreder-1 mb-md-0 mb-3">
+                    <ul class="list-unstyled d-flex mb-0 justify-content-md-end justify-content-center">
+                        <li class="px-lg-3 px-2"><a href=""><i class="fa-brands fa-lg fa-facebook-f"></i></a></li>
+                        <li class="px-lg-3 px-2"><a href=""><i class="fa-brands fa-lg fa-twitter"></i></a></li>
+                        <li class="px-lg-3 px-2"><a href=""><i class="fa-brands fa-lg fa-instagram"></i></a></li>
+                        <li class="ps-lg-3 ps-2"><a href=""><i class="fa-brands fa-lg fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
