@@ -193,13 +193,16 @@
 .MultiCarousel{
     overflow: hidden;
     .MultiCarousel-inner{
+        min-width:100%;
         @include transition(0.5s all ease);
+        display: flex;
+        flex-wrap: wrap;
     }
     .product-box{
         display: inline-block;
         padding: 1rem;
         @include mq("desktop"){
-            width: 24% !important;
+            width: 24.5% !important;
         }
     }
 }
