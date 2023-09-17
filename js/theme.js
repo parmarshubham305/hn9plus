@@ -31,11 +31,10 @@ $(document).ready(function () {
   if ($(window).width() < 767) {
     $('.filtercanvas').addClass('offcanvas offcanvas-start');
   }
-  $("#hiremodal").click(function(){
-    var itemsMainDiv = ('.MultiCarousel');
+  $('#resourceModal').on('shown.bs.modal', function () {
+       var itemsMainDiv = ('.MultiCarousel');
        var itemsDiv = ('.MultiCarousel-inner');
        var itemWidth = "";
-   
        $('.leftLst, .rightLst').click(function () {
            var condition = $(this).hasClass("leftLst");
            if (condition)
@@ -131,8 +130,11 @@ $(document).ready(function () {
            var slide = $(Parent).attr("data-slide");
            ResCarousel(ell, Parent, slide);
        }
-      
+     
    })
+   if(window.innerWidth < 575){
+    $(".MultiCarousel").attr("data-slide","1");
+  }
 });
 
 $(window).scroll(function() {
@@ -142,9 +144,4 @@ $(window).scroll(function() {
 	} else {
 		$(".sticky-top").removeClass("sticky-header");
 	}
-});
-
-
-$(document).ready(function () {
-   
 });
