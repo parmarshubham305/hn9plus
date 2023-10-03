@@ -7,7 +7,6 @@
         <div class="modal-body p-md-5 p-4 pe-md-0  position-relative">
             <div class="MultiCarousel" data-interval="1000" data-items="1,2,2,4" data-slide="2" data-items="1" id="resourceSlider">
                 <div class="MultiCarousel-inner">
-                    @foreach($values as $value)
                     <div class="item product-box">
                         <div class="rounded-4 p-4 our-resorce-card bg-light border">
                             <div class="d-flex align-self-center mb-4">
@@ -42,8 +41,7 @@
                             </div>
                         </div>
                     </div>
-                    @endforeach
-                    <!-- <div class="item product-box">
+                    <div class="item product-box">
                         <div class="rounded-4 p-4 our-resorce-card bg-light border">
                             <div class="d-flex align-self-center mb-4">
                                 <img class="img-fluid" height="80" width="80" src="images/user-grey.png" alt="">
@@ -259,8 +257,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div> -->
-                    {{ $values->links() }}
+                    </div>
                 </div>
                 <button class="carousel-control-prev leftLst over"><span class="carousel-control-prev-icon"></span></button><button class="carousel-control-next rightLst"><span class="carousel-control-next-icon"></span></button>
             </div>
