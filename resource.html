@@ -444,22 +444,42 @@
                                             data-bs-target="#addService" aria-expanded="false">Add Service</button>
                                     </div>
                                     <div class="collapse mt-3" id="addService">
-                                        <div class="me-3">
-                                            <h6 class="fw-semibold">Hours / Day</h6>
-                                        </div>
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <button class="btn bg-secondary btn-sm rounded-0 h-100" id="minus-btn"><i
-                                                        class="fa fa-minus text-white"></i></button>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="me-3">
+                                                    <h6 class="fw-semibold">Hours / Day</h6>
+                                                </div>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn bg-secondary btn-sm rounded-0 h-100" id="minus-btn"><i
+                                                                class="fa fa-minus text-white"></i></button>
+                                                    </div>
+                                                    <input type="number" id="qty_input"  class="form-control bg-white text-center form-control-sm border-bottom-0" value="1" min="1">
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn bg-secondary btn-sm rounded-0 h-100" id="plus-btn"><i
+                                                                class="fa fa-plus text-white"></i></button>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <input type="number" id="qty_input"
-                                                class="form-control bg-white text-center form-control-sm border-bottom-0"
-                                                value="1" min="1">
-                                            <div class="input-group-prepend">
-                                                <button class="btn bg-secondary btn-sm rounded-0 h-100" id="plus-btn"><i
-                                                        class="fa fa-plus text-white"></i></button>
+                                            <div class="col-md-6">
+                                                <div class="me-3">
+                                                    <h6 class="fw-semibold">Month</h6>
+                                                </div>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn bg-secondary btn-sm rounded-0 h-100" id="minus-btn"><i class="fa fa-minus text-white"></i></button>
+                                                    </div>
+                                                    <input type="number" id="qty_input"
+                                                        class="form-control bg-white text-center form-control-sm border-bottom-0"
+                                                        value="1" min="1">
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn bg-secondary btn-sm rounded-0 h-100" id="plus-btn"><i class="fa fa-plus text-white"></i></button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
+                                       
+                                        
                                     </div>
                                     <div class="check">
                                         <i class="fa-solid fa-circle-check text-success"></i>
@@ -724,8 +744,6 @@
                         class="carousel-control-next rightLst"><span
                             class="carousel-control-next-icon"></span></button>
                     </div>
-
-                    
                     <div class="pt-3 text-center">
                         <a href="#" class="btn btn-success btn-lg px-md-4">Submit Resources </a>
                     </div>

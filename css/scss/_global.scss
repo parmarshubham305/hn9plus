@@ -74,7 +74,9 @@ a {
 .badge {
     font-weight: normal;
 }
-
+.bg-light-dark{
+    background-color: #D9D9D9;
+}
 h1{@include fontSize(30px);font-family: 'poppinssemibold';color: $secondary;}
 h2{@include fontSize(24px);font-family: 'poppinsbold';}
 p{@include fontSize(18px);font-family: 'OpenSans-Regular';}
@@ -110,6 +112,7 @@ a {
     }
 }
 .btn-outline-primary{
+    padding: 0.6rem 1.5rem;
     &:hover,&:focus,&:active{
         background: $primary;
         color: #ffffff;
