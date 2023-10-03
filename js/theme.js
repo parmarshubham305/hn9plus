@@ -124,6 +124,7 @@ $(document).ready(function () {
     if (window.innerWidth < 575) {
         $(".MultiCarousel").attr("data-slide", "1");
     }
+
     $('#dashboardtab a[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
         var targetTabId = $(e.target).attr("data-bs-target");
         $(targetTabId).find('.resouce-slider').slick({
@@ -165,6 +166,35 @@ $(document).ready(function () {
         $(this).closest(".input-container").find(".edit").show();
         $(this).hide();
     });
+    if($(".tab-pane").hasClass("first-active")){
+        $('.first-active .resouce-slider').slick({
+            dots: false,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            prevArrow: '<button class="carousel-control-prev leftLst over"><span class="carousel-control-prev-icon"></span></button>',
+            nextArrow: '<button class="carousel-control-next rightLst"><span class="carousel-control-next-icon"></span></button>',
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+    }
 });
 
 $(window).scroll(function () {

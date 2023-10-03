@@ -65,8 +65,15 @@
                 <li class="list-inline-item">
                     <a class="nav-link" href="#"><span class="fa-lg icon-cart custom"></span></a>
                 </li>
-                <li class="list-inline-item">
-                    <a class="nav-link" href="/login.html"><span class="fa-lg icon-user custom"></span></a>
+                <li class="list-inline-item dropdown">
+                    <a data-bs-toggle="dropdown"  class="dropdown dropdown-toggle" href="#"><span class="fa-lg icon-user custom"></span></a>
+                    <ul class="dropdown-menu shadow"data-popper-placement="bottom-start">
+                        <li class="p-0">
+                            <a href="http://florexflooring.com/logout" class="d-block py-2 px-1">
+                                logout
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>
@@ -98,7 +105,7 @@
                     </li>
                 </ul>
                 <div class="tab-content mt-5" id="dashboardtabContent">
-                    <div class="tab-pane fade active show" id="activeproposal">
+                    <div class="tab-pane fade first-active active show" id="activeproposal">
                         <div class="bg-light p-md-5 p-4 mb-md-5 mb-4 rounded-4 position-relative">
                             <div class="row">
                                 <div class="col-12">
@@ -576,7 +583,7 @@
                                         <td width="13%" valign="middle"><span class="text-success active"><strong>
                                                     Active</strong></span></td>
                                         <td width="13%" valign="middle">
-                                            <a href="#" class="btn btn-secondary d-block">View Ticket</a>
+                                            <a href="#" class="btn btn-secondary d-block" data-bs-toggle="modal" data-bs-target="#viewticket">View Ticket</a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -585,7 +592,7 @@
                                         <td width="13%" valign="middle"><span class="text-warning active"><strong> In
                                                     Progress</strong></span></td>
                                         <td width="13%" valign="middle">
-                                            <a href="#" class="btn btn-secondary d-block">View Ticket</a>
+                                            <a href="#" class="btn btn-secondary d-block" data-bs-toggle="modal" data-bs-target="#viewticket">View Ticket</a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -594,7 +601,7 @@
                                         <td width="13%" valign="middle"><span class="text-success active"><strong>
                                                     Completed</strong></span></td>
                                         <td width="13%" valign="middle">
-                                            <a href="#" class="btn btn-secondary d-block">View Ticket</a>
+                                            <a href="#" class="btn btn-secondary d-block" data-bs-toggle="modal" data-bs-target="#viewticket">View Ticket</a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -603,7 +610,7 @@
                                         <td width="13%" valign="middle"><span class="text-danger active"><strong>
                                                     Closed</strong></span></td>
                                         <td width="13%" valign="middle">
-                                            <a href="#" class="btn btn-secondary d-block">View Ticket</a>
+                                            <a href="#" class="btn btn-secondary d-block" data-bs-toggle="modal" data-bs-target="#viewticket">View Ticket</a>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -666,7 +673,45 @@
         </div>
     </div>
   
-
+    <div class="modal fade" id="viewticket" data-bs-backdrop="static" data-bs-keyboard="false"  aria-labelledby="generateticket" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-light px-4">
+                    <h2 class="fw-bold text-secondary mb-0">Tickets</h2>
+                    <button type="button" class="btn-close text-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-md-5 p-4 position-relative">
+                    <h4 class="mb-md-4">House  No.9  Digital Solution</h4>
+                    <form action="">
+                        <div class="row mb-md-4">
+                            <div class="col-md-2">
+                                <span><strong> Priorities</strong></for="Priorities">
+                            </div>
+                            <div class="col-md-10">
+                                <span>High</span>
+                            </div>
+                        </div>
+                        <div class="row mb-md-4">
+                            <div class="col-md-2">
+                                <span><strong> Description</strong></for="Priorities">
+                            </div>
+                            <div class="col-md-10">
+                                <span>Loprem ipsum</span>
+                            </div>
+                        </div>
+                        <div class="row mb-md-4">
+                            <div class="col-md-2">
+                                <label for="Upload"><strong>Upload</strong></label>
+                            </div>
+                            <div class="col-md-10">
+                                <a href="#" class="text-primary"><u> ALl Documents</u></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="footer" class="bg-secondary py-3">
         <div class="container">
             <div class="row align-items-center">
