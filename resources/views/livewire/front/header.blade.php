@@ -1,5 +1,5 @@
 <div class="container">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="{{ route('home') }}">
         <img src="{{ asset('frontend/images/logo.png') }}" alt="site-logo" class="img-fluid" width="120">
     </a>
     <button class="navbar-toggler collapsed border-0" type="button" data-bs-toggle="collapse"
@@ -14,7 +14,7 @@
     <div class="collapse navbar-collapse h-100" id="navbarNav">
         <ul class="navbar-nav mx-auto">
             <li class="nav-item">
-                <a class="nav-link active" href="#">Home</a>
+                <a class="nav-link active" href="{{ route('front.dashboard.index') }}">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Our Site</a>
@@ -39,7 +39,7 @@
             </span>
         </li>
         <li class="list-inline-item">
-            <a class="nav-link" href="#"><span class="fa-lg icon-Chat custom"></span></a>
+            <a class="nav-link" href="{{ route('front.chat') }}"><span class="fa-lg icon-Chat custom"></span></a>
         </li>
         <li class="list-inline-item">
             <a class="nav-link" href="#"><span class="fa-lg icon-cart custom"></span></a>

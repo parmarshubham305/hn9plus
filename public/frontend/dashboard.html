@@ -1,0 +1,733 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HN9+</title>
+    <link rel="stylesheet" href="thirdparty/css/all.min.css">
+    <link rel="stylesheet" href="thirdparty/css/slick.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
+    <script type="text/javascript" src="thirdparty/js/jquery.min.js"></script>
+    <script type="text/javascript" src="thirdparty/js/all.min.js"></script>
+    <script type="text/javascript" src="thirdparty/js/slick.min.js"></script>
+    <script type="text/javascript" src="js/theme.js"></script>
+</head>
+
+
+<body>
+    <nav class="navbar navbar-expand-xl border-bottom py-2 bg-white position-sticky top-0 z-2">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="site-logo" class="img-fluid" width="120">
+            </a>
+            <button class="navbar-toggler collapsed border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="hamburger-menu">
+                    <span class="bar-top"></span>
+                    <span class="bar-middle"></span>
+                    <span class="bar-bottom"></span>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse h-100" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Our Site</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Our Service </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact us</a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="list-unstyled list-inline d-md-inline-block d-none mb-0 nav-icons">
+                <li class="list-inline-item search">
+                    <a class="nav-link search-btn" href="#"><span class="fa-lg icon-search custom"></span></a>
+                    <span class="search-bar">
+                        <input class="form-control border " type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-primary rounded-0" type="submit"><span
+                                class="fa-lg icon-Search custom ms-0 fs-6"></span></button>
+                    </span>
+                </li>
+                <li class="list-inline-item">
+                    <a class="nav-link" href="#"><span class="fa-lg icon-Chat custom"></span></a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="nav-link" href="#"><span class="fa-lg icon-cart custom"></span></a>
+                </li>
+                <li class="list-inline-item dropdown">
+                    <a data-bs-toggle="dropdown"  class="dropdown dropdown-toggle" href="#"><span class="fa-lg icon-user custom"></span></a>
+                    <ul class="dropdown-menu shadow"data-popper-placement="bottom-start">
+                        <li class="p-0">
+                            <a href="http://florexflooring.com/logout" class="d-block py-2 px-1">
+                                logout
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="bg-white">
+        <section class="spacing-y dashboard-section">
+            <div class="container">
+                <ul class="nav nav-tabs hire-tablist" id="dashboardtab" role="tablist">
+                    <li class="nav-item pe-md-5 pe-4 pb-lg-0 pb-3">
+                        <a href="javascript:void()" aria-controls="activeproposal" class="nav-link p-2 active text-secondary"
+                            id="hire-tab1" data-bs-toggle="tab" data-bs-target="#activeproposal">Active Proposal</a>
+                    </li>
+                    <li class="nav-item pe-md-5 pe-4 pb-lg-0 pb-3">
+                        <a href="javascript:void()" aria-controls="activeproject" class="nav-link p-2 text-secondary"
+                            id="hire-tab2" data-bs-toggle="tab" data-bs-target="#activeproject">Active Project</a>
+                    </li>
+                    <li class="nav-item pe-md-5 pe-4 pb-lg-0 pb-3">
+                        <a href="javascript:void()" aria-controls="completeproject"
+                            class="nav-link p-2  text-secondary" id="hire-tab3" data-bs-toggle="tab"
+                            data-bs-target="#completeproject">Completed Project</a>
+                    </li>
+                    <li class="nav-item pe-md-5 pe-4 pb-lg-0 pb-3">
+                        <a href="javascript:void()" aria-controls="totalticket" class="nav-link p-2 text-secondary"
+                            id="hire-tab4" data-bs-toggle="tab" data-bs-target="#totalticket">Total Ticket</a>
+                    </li>
+                    <li class="nav-item pb-lg-0 pb-3 ms-auto me-0">
+                        <a href="#" class="btn btn-primary"
+                            >New Project</a>
+                    </li>
+                </ul>
+                <div class="tab-content mt-5" id="dashboardtabContent">
+                    <div class="tab-pane fade first-active active show" id="activeproposal">
+                        <div class="bg-light p-md-5 p-4 mb-md-5 mb-4 rounded-4 position-relative">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2 class="text-secondary mb-md-3">House No9 Digital Solution</h2>
+                                    <p>Quisque gravida ac tortor quis lacinia. Ut volutpat nisi at consequat
+                                        euismod. Integer facilisis arcu sit amet quam sodales, eget facilisis
+                                        lectus porttitor. In lobortis tristique mi sed varius. Donec mi libero
+                                    </p>
+                                    <p>Quisque gravida ac tortor quis lacinia. Ut volutpat nisi at consequat
+                                        euismod. Integer facilisis arcu sit amet quam sodales, eget facilisis
+                                        lectus porttitor. In lobortis tristique mi sed varius. Donec mi libero
+                                    </p>
+                                </div>
+                                <div class="col-lg-4 my-3">
+                                    <h5 class="mb-3"><span class="text-secondary">Project Timeline:</span>
+                                        < 3 Months</h5>
+                                            <h5 class="mb-3"><span class="text-secondary">Payment Milestone:</span>
+                                                Weekly</h5>
+
+                                </div>
+                                <div class="col-lg-4 my-3">
+                                    <h5 class="mb-3"><span class="text-secondary">Experience: </span> Expert</h5>
+                                    <h5 class="mb-3"><span class="text-secondary">Attached File:</span> <a href="#"><u>
+                                                View Documents</u></a></h5>
+                                </div>
+                                <div class="col-12 mb-md-5 mb-3">
+                                    <h5 class="text-secondary mb-3"><span>Hire Resources</span></h5>
+                                    <div class="resouce-slider">
+                                        <div>
+                                            <div class="d-flex align-self-center p-4 bg-light-dark rounded-4 me-3">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="102" height="102"
+                                                    viewBox="0 0 102 102" fill="none">
+                                                    <circle cx="51" cy="51" r="51" fill="#6F6F6F" />
+                                                </svg>
+                                                <div class="align-self-center ms-4 flex-fill">
+                                                    <div class="float-lg-end">
+                                                        <p class="mb-0">5 Years</p>
+                                                    </div>
+                                                    <h4 class="mb-0 fw-semibold text-secondary">John Doe</h4>
+                                                    <p class="mb-0 text-muted">Frontend developer</p>
+                                                    <div class="mb-0 text-muted d-flex align-items-center input-container"><span>Hours/ Day: </span> 
+                                                        <input type="number" class="form-control border bg-white w-25 mx-2 numberfield" disabled value="1" min="1" max="8">
+                                                        <a href="javascript:voic()" title="Edit"  data-bs-toggle="tooltip" data-bs-placement="bottom" class="edit">
+                                                            <i class="fas fa-edit ms-2"></i>
+                                                        </a>
+                                                        <a href="javascript:void()" class="save" title="save" data-bs-toggle="tooltip" data-bs-placement="bottom">
+                                                            <i class="fas fa-save  ms-2"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="mb-0 text-muted d-flex align-items-center input-container"><span>Months: </span>
+                                                        <input type="number" class="form-control border bg-white w-25 mx-2 numberfield" disabled value="1" min="1" max="8">
+                                                        <a href="javascript:voic()" title="Edit"  data-bs-toggle="tooltip" data-bs-placement="bottom" class="edit">
+                                                            <i class="fas fa-edit ms-2"></i>
+                                                        </a>
+                                                        <a href="javascript:void()" class="save" title="save" data-bs-toggle="tooltip" data-bs-placement="bottom">
+                                                            <i class="fas fa-save  ms-2"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="d-flex align-self-center p-4 bg-light-dark rounded-4 me-3">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="102" height="102"
+                                                    viewBox="0 0 102 102" fill="none">
+                                                    <circle cx="51" cy="51" r="51" fill="#6F6F6F" />
+                                                </svg>
+                                                <div class="align-self-center ms-4 flex-fill">
+                                                    <div class="float-lg-end">
+                                                        <p class="mb-0">5 Years</p>
+                                                    </div>
+                                                    <h4 class="mb-0 fw-semibold text-secondary">John Doe</h4>
+                                                    <p class="mb-0 text-muted">Frontend developer</p>
+                                                    <div class="mb-0 text-muted d-flex align-items-center input-container"><span>Hours/ Day: </span> 
+                                                        <input type="number" class="form-control border bg-white w-25 mx-2 numberfield" disabled value="1" min="1" max="8">
+                                                        <a href="javascript:voic()" title="Edit"  data-bs-toggle="tooltip" data-bs-placement="bottom" class="edit">
+                                                            <i class="fas fa-edit ms-2"></i>
+                                                        </a>
+                                                        <a href="javascript:void()" class="save" title="save" data-bs-toggle="tooltip" data-bs-placement="bottom">
+                                                            <i class="fas fa-save  ms-2"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="mb-0 text-muted d-flex align-items-center input-container"><span>Months: </span>
+                                                        <input type="number" class="form-control border bg-white w-25 mx-2 numberfield" disabled value="1" min="1" max="8">
+                                                        <a href="javascript:voic()" title="Edit"  data-bs-toggle="tooltip" data-bs-placement="bottom" class="edit">
+                                                            <i class="fas fa-edit ms-2"></i>
+                                                        </a>
+                                                        <a href="javascript:void()" class="save" title="save" data-bs-toggle="tooltip" data-bs-placement="bottom">
+                                                            <i class="fas fa-save  ms-2"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="d-flex align-self-center p-4 bg-light-dark rounded-4 me-3">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="102" height="102"
+                                                    viewBox="0 0 102 102" fill="none">
+                                                    <circle cx="51" cy="51" r="51" fill="#6F6F6F" />
+                                                </svg>
+                                                <div class="align-self-center ms-4 flex-fill">
+                                                    <div class="float-lg-end">
+                                                        <p class="mb-0">5 Years</p>
+                                                    </div>
+                                                    <h4 class="mb-0 fw-semibold text-secondary">John Doe</h4>
+                                                    <p class="mb-0 text-muted">Frontend developer</p>
+                                                    <div class="mb-0 text-muted d-flex align-items-center input-container"><span>Hours/ Day: </span> 
+                                                        <input type="number" class="form-control border bg-white w-25 mx-2 numberfield" disabled value="1" min="1" max="8">
+                                                        <a href="javascript:voic()" title="Edit"  data-bs-toggle="tooltip" data-bs-placement="bottom" class="edit">
+                                                            <i class="fas fa-edit ms-2"></i>
+                                                        </a>
+                                                        <a href="javascript:void()" class="save" title="save" data-bs-toggle="tooltip" data-bs-placement="bottom">
+                                                            <i class="fas fa-save  ms-2"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="mb-0 text-muted d-flex align-items-center input-container"><span>Months: </span>
+                                                        <input type="number" class="form-control border bg-white w-25 mx-2 numberfield" disabled value="1" min="1" max="8">
+                                                        <a href="javascript:voic()" title="Edit"  data-bs-toggle="tooltip" data-bs-placement="bottom" class="edit">
+                                                            <i class="fas fa-edit ms-2"></i>
+                                                        </a>
+                                                        <a href="javascript:void()" class="save" title="save" data-bs-toggle="tooltip" data-bs-placement="bottom">
+                                                            <i class="fas fa-save  ms-2"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="d-flex align-self-center p-4 bg-light-dark rounded-4 me-3">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="102" height="102"
+                                                    viewBox="0 0 102 102" fill="none">
+                                                    <circle cx="51" cy="51" r="51" fill="#6F6F6F" />
+                                                </svg>
+                                                <div class="align-self-center ms-4 flex-fill">
+                                                    <div class="float-lg-end">
+                                                        <p class="mb-0">5 Years</p>
+                                                    </div>
+                                                    <h4 class="mb-0 fw-semibold text-secondary">John Doe</h4>
+                                                    <p class="mb-0 text-muted">Frontend developer</p>
+                                                    <div class="mb-0 text-muted d-flex align-items-center input-container"><span>Hours/ Day: </span> 
+                                                        <input type="number" class="form-control border bg-white w-25 mx-2 numberfield" disabled value="1" min="1" max="8">
+                                                        <a href="javascript:voic()" title="Edit"  data-bs-toggle="tooltip" data-bs-placement="bottom" class="edit">
+                                                            <i class="fas fa-edit ms-2"></i>
+                                                        </a>
+                                                        <a href="javascript:void()" class="save" title="save" data-bs-toggle="tooltip" data-bs-placement="bottom">
+                                                            <i class="fas fa-save  ms-2"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="mb-0 text-muted d-flex align-items-center input-container"><span>Months: </span>
+                                                        <input type="number" class="form-control border bg-white w-25 mx-2 numberfield" disabled value="1" min="1" max="8">
+                                                        <a href="javascript:voic()" title="Edit"  data-bs-toggle="tooltip" data-bs-placement="bottom" class="edit">
+                                                            <i class="fas fa-edit ms-2"></i>
+                                                        </a>
+                                                        <a href="javascript:void()" class="save" title="save" data-bs-toggle="tooltip" data-bs-placement="bottom">
+                                                            <i class="fas fa-save  ms-2"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 d-flex align-items-center">
+                                    <a href="#" class="btn btn-primary me-3">Send Message</a>
+                                    <a href="#" class="fw-semibold"><u> Click here to complete process</u></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="activeproject">
+                        <div class="bg-light p-md-5 p-4 mb-md-5 mb-4 rounded-4 position-relative">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2 class="text-secondary mb-md-3">House No9 Digital Solution</h2>
+                                    <p>Quisque gravida ac tortor quis lacinia. Ut volutpat nisi at consequat
+                                        euismod. Integer facilisis arcu sit amet quam sodales, eget facilisis
+                                        lectus porttitor. In lobortis tristique mi sed varius. Donec mi libero
+                                    </p>
+                                    <p>Quisque gravida ac tortor quis lacinia. Ut volutpat nisi at consequat
+                                        euismod. Integer facilisis arcu sit amet quam sodales, eget facilisis
+                                        lectus porttitor. In lobortis tristique mi sed varius. Donec mi libero
+                                    </p>
+                                </div>
+                                <div class="col-lg-4 my-3">
+                                    <h5 class="mb-3"><span class="text-secondary">Project Timeline:</span>
+                                        < 3 Months</h5>
+                                            <h5 class="mb-3"><span class="text-secondary">Payment Milestone:</span>
+                                                Weekly</h5>
+
+                                </div>
+                                <div class="col-lg-4 my-3">
+                                    <h5 class="mb-3"><span class="text-secondary">Experience: </span> Expert</h5>
+                                    <h5 class="mb-3"><span class="text-secondary">All Documents:</span> <a href="#"><u>
+                                                View Documents</u></a></h5>
+                                </div>
+                                <div class="col-12 mb-md-5 mb-3">
+                                    <h5 class="text-secondary mb-3"><span>Hire Resources</span></h5>
+                                    <div class="resouce-slider">
+                                        <div>
+                                            <div
+                                                class="d-flex align-self-center p-4 bg-light-dark rounded-4 me-3">
+                                                <div class="d-flex">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="102" height="102"
+                                                        viewBox="0 0 102 102" fill="none">
+                                                        <circle cx="51" cy="51" r="51" fill="#6F6F6F" />
+                                                    </svg>
+                                                    <div class="align-self-center ms-4 flex-fill">
+                                                        <h4 class="mb-0 fw-semibold text-secondary">John Doe</h4>
+                                                        <p class="mb-0 text-muted">Frontend developer</p>
+                                                    </div>
+                                                </div>
+                                                <div class="float-lg-end align-self-start">
+                                                    <p class="mb-0">5 Years</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="d-flex align-self-center p-4 bg-light-dark rounded-4 me-3">
+                                                <div class="d-flex">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="102" height="102"
+                                                        viewBox="0 0 102 102" fill="none">
+                                                        <circle cx="51" cy="51" r="51" fill="#6F6F6F" />
+                                                    </svg>
+                                                    <div class="align-self-center ms-4 flex-fill">
+                                                        <h4 class="mb-0 fw-semibold text-secondary">John Doe</h4>
+                                                        <p class="mb-0 text-muted">Frontend developer</p>
+                                                    </div>
+                                                </div>
+                                                <div class="float-lg-end align-self-start">
+                                                    <p class="mb-0">5 Years</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="d-flex align-self-center p-4 bg-light-dark rounded-4 me-3">
+                                                <div class="d-flex">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="102" height="102"
+                                                        viewBox="0 0 102 102" fill="none">
+                                                        <circle cx="51" cy="51" r="51" fill="#6F6F6F" />
+                                                    </svg>
+                                                    <div class="align-self-center ms-4 flex-fill">
+                                                        <h4 class="mb-0 fw-semibold text-secondary">John Doe</h4>
+                                                        <p class="mb-0 text-muted">Frontend developer</p>
+                                                    </div>
+                                                </div>
+                                                <div class="float-lg-end align-self-start">
+                                                    <p class="mb-0">5 Years</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="d-flex align-self-center p-4 bg-light-dark rounded-4 me-3">
+                                                <div class="d-flex">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="102" height="102"
+                                                        viewBox="0 0 102 102" fill="none">
+                                                        <circle cx="51" cy="51" r="51" fill="#6F6F6F" />
+                                                    </svg>
+                                                    <div class="align-self-center ms-4 flex-fill">
+                                                        <h4 class="mb-0 fw-semibold text-secondary">John Doe</h4>
+                                                        <p class="mb-0 text-muted">Frontend developer</p>
+                                                    </div>
+                                                </div>
+                                                <div class="float-lg-end align-self-start">
+                                                    <p class="mb-0">5 Years</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 d-flex align-items-center">
+                                    <a href="#" class="btn btn-primary me-3">Send Message</a>
+                                    <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#generateticket">Generate Ticket</a>
+                                    <a href="#" class="btn btn-outline-primary ms-3">Order Summary</a>
+                                    <a href="#" class="ms-auto me-0"><u>Hire More Developer</u></a>
+                                </div>
+                            </div>
+                            <div class="project-status">
+                                <span class="text-secondary">Active</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="completeproject">
+                        <div class="bg-light p-md-5 p-4 mb-md-5 mb-4 rounded-4 position-relative">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2 class="text-secondary mb-md-3">House No9 Digital Solution</h2>
+                                    <p>Quisque gravida ac tortor quis lacinia. Ut volutpat nisi at consequat
+                                        euismod. Integer facilisis arcu sit amet quam sodales, eget facilisis
+                                        lectus porttitor. In lobortis tristique mi sed varius. Donec mi libero
+                                    </p>
+                                    <p>Quisque gravida ac tortor quis lacinia. Ut volutpat nisi at consequat
+                                        euismod. Integer facilisis arcu sit amet quam sodales, eget facilisis
+                                        lectus porttitor. In lobortis tristique mi sed varius. Donec mi libero
+                                    </p>
+                                </div>
+                                <div class="col-lg-4 my-3">
+                                    <h5 class="mb-3"><span class="text-secondary">Project Timeline:</span>
+                                        < 3 Months</h5>
+                                            <h5 class="mb-3"><span class="text-secondary">Payment Milestone:</span>
+                                                Weekly</h5>
+
+                                </div>
+                                <div class="col-lg-4 my-3">
+                                    <h5 class="mb-3"><span class="text-secondary">Experience: </span> Expert</h5>
+                                    <h5 class="mb-3"><span class="text-secondary">All Documents:</span> <a href="#"><u>
+                                                View Documents</u></a></h5>
+                                </div>
+                                <div class="col-12 mb-md-5 mb-3">
+                                    <h5 class="text-secondary mb-3"><span>Hire Resources</span></h5>
+                                    <div class="resouce-slider">
+                                        <div>
+                                            <div
+                                                class="d-flex align-self-center p-4 bg-light-dark rounded-4 me-3">
+                                                <div class="d-flex">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="102" height="102"
+                                                        viewBox="0 0 102 102" fill="none">
+                                                        <circle cx="51" cy="51" r="51" fill="#6F6F6F" />
+                                                    </svg>
+                                                    <div class="align-self-center ms-4 flex-fill">
+                                                        <h4 class="mb-0 fw-semibold text-secondary">John Doe</h4>
+                                                        <p class="mb-0 text-muted">Frontend developer</p>
+                                                        <a href="#" class="text-secondary">Hire Resource again</a>
+                                                    </div>
+                                                </div>
+                                                <div class="float-lg-end align-self-start">
+                                                    <p class="mb-0">5 Years</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="d-flex align-self-center p-4 bg-light-dark rounded-4 me-3">
+                                                <div class="d-flex">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="102" height="102"
+                                                        viewBox="0 0 102 102" fill="none">
+                                                        <circle cx="51" cy="51" r="51" fill="#6F6F6F" />
+                                                    </svg>
+                                                    <div class="align-self-center ms-4 flex-fill">
+                                                        <h4 class="mb-0 fw-semibold text-secondary">John Doe</h4>
+                                                        <p class="mb-0 text-muted">Frontend developer</p>
+                                                    </div>
+                                                </div>
+                                                <div class="float-lg-end align-self-start">
+                                                    <p class="mb-0">5 Years</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="d-flex align-self-center p-4 bg-light-dark rounded-4 me-3">
+                                                <div class="d-flex">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="102" height="102"
+                                                        viewBox="0 0 102 102" fill="none">
+                                                        <circle cx="51" cy="51" r="51" fill="#6F6F6F" />
+                                                    </svg>
+                                                    <div class="align-self-center ms-4 flex-fill">
+                                                        <h4 class="mb-0 fw-semibold text-secondary">John Doe</h4>
+                                                        <p class="mb-0 text-muted">Frontend developer</p>
+                                                    </div>
+                                                </div>
+                                                <div class="float-lg-end align-self-start">
+                                                    <p class="mb-0">5 Years</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="d-flex align-self-center p-4 bg-light-dark rounded-4 me-3">
+                                                <div class="d-flex">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="102" height="102"
+                                                        viewBox="0 0 102 102" fill="none">
+                                                        <circle cx="51" cy="51" r="51" fill="#6F6F6F" />
+                                                    </svg>
+                                                    <div class="align-self-center ms-4 flex-fill">
+                                                        <h4 class="mb-0 fw-semibold text-secondary">John Doe</h4>
+                                                        <p class="mb-0 text-muted">Frontend developer</p>
+                                                    </div>
+                                                </div>
+                                                <div class="float-lg-end align-self-start">
+                                                    <p class="mb-0">5 Years</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 d-flex align-items-center">
+                                    <a href="#" class="btn btn-primary me-3">Send Message</a>
+                                    <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#generateticket">Generate Ticket</a>
+                                </div>
+                            </div>
+                            <div class="project-status">
+                                <span class="text-success">Completed</span>
+                            </div>
+                        </div>
+                        <div class="bg-light p-md-5 p-4 mb-md-5 mb-4 rounded-4 position-relative">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2 class="text-secondary mb-md-3">House No9 Digital Solution</h2>
+                                    <p>Quisque gravida ac tortor quis lacinia. Ut volutpat nisi at consequat
+                                        euismod. Integer facilisis arcu sit amet quam sodales, eget facilisis
+                                        lectus porttitor. In lobortis tristique mi sed varius. Donec mi libero
+                                    </p>
+                                    <p>Quisque gravida ac tortor quis lacinia. Ut volutpat nisi at consequat
+                                        euismod. Integer facilisis arcu sit amet quam sodales, eget facilisis
+                                        lectus porttitor. In lobortis tristique mi sed varius. Donec mi libero
+                                    </p>
+                                </div>
+                                <div class="col-lg-4 my-3">
+                                    <h5 class="mb-3"><span class="text-secondary">Project Timeline:</span>
+                                        < 3 Months</h5>
+                                            <h5 class="mb-3"><span class="text-secondary">Payment Milestone:</span>
+                                                Weekly</h5>
+
+                                </div>
+                                <div class="col-lg-4 my-3">
+                                    <h5 class="mb-3"><span class="text-secondary">Experience: </span> Expert</h5>
+                                    <h5 class="mb-3"><span class="text-secondary">All Documents:</span> <a href="#"><u>
+                                                View Documents</u></a></h5>
+                                </div>
+                                <div class="col-12 mb-md-5 mb-3">
+                                    <h5 class="text-secondary mb-3"><span>Hire Resources</span></h5>
+                                    <div class="resouce-slider">
+                                        <div>
+                                            <div
+                                                class="d-flex align-self-center p-4 bg-light-dark rounded-4 me-3">
+                                                <div class="d-flex">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="102" height="102"
+                                                        viewBox="0 0 102 102" fill="none">
+                                                        <circle cx="51" cy="51" r="51" fill="#6F6F6F" />
+                                                    </svg>
+                                                    <div class="align-self-center ms-4 flex-fill">
+                                                        <h4 class="mb-0 fw-semibold text-secondary">John Doe</h4>
+                                                        <p class="mb-0 text-muted">Frontend developer</p>
+                                                        <a href="#" class="text-secondary">Hire Resource again</a>
+                                                    </div>
+                                                </div>
+                                                <div class="float-lg-end align-self-start">
+                                                    <p class="mb-0">5 Years</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 d-flex align-items-center">
+                                    <a href="#" class="btn btn-primary me-3">Send Message</a>
+                                    <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#generateticket">Generate Ticket</a>
+                                </div>
+                            </div>
+                            <div class="project-status">
+                                <span class="text-success">Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="totalticket">
+                        <div class="table-responsive">
+                            <table class="table border ticket-table table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th valign="middle">Ticket Id</th>
+                                        <th valign="middle">Ticket Description</th>
+                                        <th valign="middle">Status</th>
+                                        <th valign="middle"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td width="14%" valign="middle"><strong> #0001</strong></td>
+                                        <td width="60%" valign="middle">Lorem ipsum dolor amet ipsuasjh </td>
+                                        <td width="13%" valign="middle"><span class="text-success active"><strong>
+                                                    Active</strong></span></td>
+                                        <td width="13%" valign="middle">
+                                            <a href="#" class="btn btn-secondary d-block" data-bs-toggle="modal" data-bs-target="#viewticket">View Ticket</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="14%" valign="middle"><strong> #0002</strong></td>
+                                        <td width="60%" valign="middle">Lorem ipsum dolor amet ipsuasjh </td>
+                                        <td width="13%" valign="middle"><span class="text-warning active"><strong> In
+                                                    Progress</strong></span></td>
+                                        <td width="13%" valign="middle">
+                                            <a href="#" class="btn btn-secondary d-block" data-bs-toggle="modal" data-bs-target="#viewticket">View Ticket</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="14%" valign="middle"><strong> #0003</strong></td>
+                                        <td width="60%" valign="middle">Lorem ipsum dolor amet ipsuasjh </td>
+                                        <td width="13%" valign="middle"><span class="text-success active"><strong>
+                                                    Completed</strong></span></td>
+                                        <td width="13%" valign="middle">
+                                            <a href="#" class="btn btn-secondary d-block" data-bs-toggle="modal" data-bs-target="#viewticket">View Ticket</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="14%" valign="middle"><strong> #0004</strong></td>
+                                        <td width="60%" valign="middle">Lorem ipsum dolor amet ipsuasjh </td>
+                                        <td width="13%" valign="middle"><span class="text-danger active"><strong>
+                                                    Closed</strong></span></td>
+                                        <td width="13%" valign="middle">
+                                            <a href="#" class="btn btn-secondary d-block" data-bs-toggle="modal" data-bs-target="#viewticket">View Ticket</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="modal fade" id="generateticket" data-bs-backdrop="static" data-bs-keyboard="false"  aria-labelledby="generateticket" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-light px-4">
+                    <h2 class="fw-bold text-secondary mb-0">Generate Tickets</h2>
+                    <button type="button" class="btn-close text-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-md-5 p-4 position-relative">
+                    <h4 class="mb-md-4">House  No.9  Digital Solution</h4>
+                    <form action="">
+                        <div class="row mb-md-4">
+                            <div class="col-md-2">
+                                <label for="Priorities"><strong> Priorities</strong></label>
+                            </div>
+                            <div class="col-md-10">
+                                <select  placeholder="Technology"  data-allow-clear="1" class="form-select cutom-select multiselect rounded-0 ps-1">
+                                    <option value="1">High</option>
+                                    <option value="2">Low</option>
+                                    <option value="3">Meduim</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-md-4">
+                            <div class="col-md-2">
+                                <label for="Description" class="me-4"><strong>Description</strong></label>
+                            </div>
+                            <div class="col-md-10">
+                                <textarea class="form-control border"  id="Description"></textarea>
+                            </div>
+                        </div>
+                        <div class="row mb-md-4">
+                            <div class="col-md-2">
+                                <label for="Upload"><strong>Upload</strong></label>
+                            </div>
+                            <div class="col-md-10">
+                                <div class="input-group mb-3">
+                                    <label class="btn btn-outline-primary px-4 rounded-pill" for="upload">Upload File</label>
+                                    <input type="file" class="form-control" id="upload">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 pt-3 text-center">
+                                <a href="#" class="btn btn-primary btn-lg px-md-4">Submit </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <div class="modal fade" id="viewticket" data-bs-backdrop="static" data-bs-keyboard="false"  aria-labelledby="generateticket" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-light px-4">
+                    <h2 class="fw-bold text-secondary mb-0">Tickets</h2>
+                    <button type="button" class="btn-close text-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-md-5 p-4 position-relative">
+                    <h4 class="mb-md-4">House  No.9  Digital Solution</h4>
+                    <form action="">
+                        <div class="row mb-md-4">
+                            <div class="col-md-2">
+                                <span><strong> Priorities</strong></for="Priorities">
+                            </div>
+                            <div class="col-md-10">
+                                <span>High</span>
+                            </div>
+                        </div>
+                        <div class="row mb-md-4">
+                            <div class="col-md-2">
+                                <span><strong> Description</strong></for="Priorities">
+                            </div>
+                            <div class="col-md-10">
+                                <span>Loprem ipsum</span>
+                            </div>
+                        </div>
+                        <div class="row mb-md-4">
+                            <div class="col-md-2">
+                                <label for="Upload"><strong>Upload</strong></label>
+                            </div>
+                            <div class="col-md-10">
+                                <a href="#" class="text-primary"><u> ALl Documents</u></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer" class="bg-secondary py-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 order-md-1 order-2 text-md-start text-center">
+                    <p class="mb-0 text-white">Copyright @2023. All rights reserved</p>
+                </div>
+                <div class="col-md-6 order-md-2 oreder-1 mb-md-0 mb-3">
+                    <ul class="list-unstyled d-flex mb-0 justify-content-md-end justify-content-center">
+                        <li class="px-lg-3 px-2"><a href=""><i class="fa-brands fa-lg fa-facebook-f"></i></a></li>
+                        <li class="px-lg-3 px-2"><a href=""><i class="fa-brands fa-lg fa-twitter"></i></a></li>
+                        <li class="px-lg-3 px-2"><a href=""><i class="fa-brands fa-lg fa-instagram"></i></a></li>
+                        <li class="ps-lg-3 ps-2"><a href=""><i class="fa-brands fa-lg fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

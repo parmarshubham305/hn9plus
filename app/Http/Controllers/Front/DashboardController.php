@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use PDF;
+use App\Models\ProjectQuote;
+use App\Models\Chat;
+use App\Models\Admin;
+use Illuminate\Support\Str;
 
-class HireResourceController extends Controller
+class DashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +18,9 @@ class HireResourceController extends Controller
      */
     public function index()
     {
-        //
+        $quotes = ProjectQuote::where('user_id', \Auth::user()->id)->where('status', 'Pending')->with('hiredResources')->get()->toArray();
+        
+        return view('frontend.dashboard', compact('quotes'));
     }
 
     /**
@@ -23,9 +28,9 @@ class HireResourceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($type, $id)
+    public function create()
     {
-        return view('frontend.hire_resource.create', compact('id'));
+        //
     }
 
     /**
@@ -84,9 +89,21 @@ class HireResourceController extends Controller
         //
     }
 
-    public function viewResume(Request $request, $id) {
-        $pdf = PDF::loadView('frontend.resume');
-        // $pdf->download('invoice.pdf');
-        return $pdf->stream();
-    } 
+    public function chat(Request $request) 
+    {
+        $admin = Admin::first();
+
+        $randomString = Str::random(7);
+
+        $user = Chat::where(['admin_id' => $admin['id'], 'user_id' => auth()->user()->id])->firstOr(function () use ($admin, $randomString) {
+            return Chat::create([
+                'admin_id' => $admin['id'],
+                'user_id' => auth()->user()->id,
+                'channel' => $randomString
+            ]);
+        });
+        $chatChannel = $user['channel'];
+
+        return view('frontend.chat', compact('user', 'chatChannel'));
+    }
 }

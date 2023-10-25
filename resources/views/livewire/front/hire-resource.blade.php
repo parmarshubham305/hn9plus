@@ -43,30 +43,20 @@
             </div>
             <div class="col-lg-9">
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="resource-select-box bg-white p-3 border rounded-4 mb-3 d-md-flex flex-wrap justify-content-between">
-                            <h5 class="fw-bold mb-0">Johan Doe  <span class="fs-6 fw-normal">Web Designer</span></h5>
-                            <p class="d-inline-block text-dark mb-0">Day/Hours  <strong> 4</strong></p>
-                            <a href="#" class="btn text-danger float-end"> <i class="d-inline-block fa-regular fa-trash-can" aria-hidden="true"></i></a>
+                    @if($hiredResources)
+                        @foreach($hiredResources as $key => $hiredResource)
+                        <div class="col-md-6">
+                            <div class="resource-select-box bg-white p-3 border rounded-4 mb-3 d-md-flex flex-wrap justify-content-between">
+                                <h5 class="fw-bold mb-0"> {{ $hiredResource['name'] }}  <span class="fs-6 fw-normal"> {{ $hiredResource['designation'] }}</span></h5>
+                                <p class="d-inline-block text-dark mb-0">Day/Hours  <strong> {{ $hiredResource['hours'] }}</strong></p>
+                                <a wire:click="removeHiredResource({{ $key }})" class="btn text-danger float-end"> <i class="d-inline-block fa-regular fa-trash-can" aria-hidden="true"></i></a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="resource-select-box bg-white p-3 border rounded-4 mb-3 d-md-flex flex-wrap justify-content-between">
-                            <h5 class="fw-bold mb-0">Raj parmar  <span class="fs-6 fw-normal">Frontend Developer</span></h5>
-                            <p class="d-inline-block text-dark mb-0">Day/Hours  <strong> 2</strong></p>
-                            <a href="#" class="btn text-danger float-end"> <i class="d-inline-block fa-regular fa-trash-can" aria-hidden="true"></i></a>
+                        @endforeach
+                        <div class="col-auto ms-auto text-lg-end text-center mb-4 ">
+                            <a wire:click="hired" class="btn btn-primary rounded-3 px-5">Submit </a>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="resource-select-box bg-white p-3 border rounded-4 mb-3 d-md-flex flex-wrap justify-content-between">
-                            <h5 class="fw-bold mb-0">Nike <span class="fs-6 fw-normal">Frontend Developer</span></h5>
-                            <p class="d-inline-block text-dark mb-0">Day/Hours  <strong> 2</strong></p>
-                            <a href="#" class="btn text-danger float-end"> <i class="d-inline-block fa-regular fa-trash-can" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-auto ms-auto text-lg-end text-center mb-4 ">
-                        <a href="#" class="btn btn-primary rounded-3 px-5">Submit </a>
-                    </div>
+                    @endif
                 </div>
                 
                 <div class="row hire-resource">
@@ -88,12 +78,12 @@
                                 <p class="">{{ $filter['description'] }}</p>
                             </div>
                             <div class="card-footer bg-transparent border-0 m-auto pt-3 pb-4">
-                                <button type="button" class="btn btn-primary" onclick="Livewire.emit('openModal', 'front.hire-resource-popup', { id: {{ $filter['id'] }} })">Hire Resource</button>
+                                <!-- <button type="button" class="btn btn-primary" onclick="Livewire.emit('openModal', 'front.hire-resource-popup', {{ json_encode(['skill' =>  1]) }})">Hire Resource</button> -->
+                                <button type="button" class="btn btn-primary" wire:click="$emit('openModal', 'front.hire-resource-popup', {{ json_encode(['skill' => $filter['id'], 'hiredResources' => $hiredResources]) }})">Hire Resource</button>
                             </div>
                         </div>
                     </div>
                     @endforeach
-                    {{ $filters->links() }}
                 </div>
             </div>
         </div>

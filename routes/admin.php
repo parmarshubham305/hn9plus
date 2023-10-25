@@ -42,5 +42,7 @@ Route::group(['as' => 'admin.'], function () {
 
 		Route::post('users/delete', 'UserController@delete')->name('users.delete');
 		Route::resource('/users', 'UserController');
+
+		Route::resource('/chats', 'ChatController');
 	});
 });

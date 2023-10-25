@@ -31,7 +31,6 @@
 	                  <th>Designation</th>
 	                  <th>Email</th>
 	                  <th>Phone</th>
-	                  <th>Skills</th>
 	                  <th>Action</th>
 	                </tr>
                 </thead>
@@ -43,7 +42,6 @@
 	                  <th>Designation</th>
 	                  <th>Email</th>
 	                  <th>Phone</th>
-	                  <th>Skills</th>
 	                  <th>Action</th>
 	                </tr>
                 </tfoot>
@@ -127,7 +125,6 @@
 	        { "mData": "designation",sWidth: "10%",bSortable: true,},
 	        { "mData": "email",sWidth: "10%",bSortable: true,},
 	        { "mData": "contact_number",sWidth: "10%",bSortable: false,},
-	        { "mData": "skills",sWidth: "10%",bSortable: false,},
 	        {
 	            mData: null,
 	            bSortable: false,

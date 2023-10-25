@@ -18,17 +18,8 @@ class Developer extends Model
         'contact_number',
         'address',
         'email',
-        'education',
-        'skills'
+        'education'
     ];
-
-    public function setSkillsAttribute($value) {
-        $this->attributes['skills'] = implode(',', $value);
-    }
-
-    public function getSkillsAttribute($value) {
-        return explode(',', $value);
-    }
 
     public function getExperienceAttribute($value) {
         return json_decode($value, true);

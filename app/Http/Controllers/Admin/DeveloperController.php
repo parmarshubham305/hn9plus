@@ -8,6 +8,7 @@ use App\Models\Developer;
 use App\Models\Skill;
 use App\Jobs\Backend\DeveloperJob;
 use App\Http\Requests\Backend\DeveloperRequest;
+use App\Models\DeveloperSkill;
 
 class DeveloperController extends Controller
 {
@@ -29,14 +30,14 @@ class DeveloperController extends Controller
                     . ")";
             }
             
-            $data = Developer::select('id', 'name', 'designation', 'email', 'contact_number', 'skills')
+            $data = Developer::select('id', 'name', 'designation', 'email', 'contact_number')
                 ->whereRaw($where_str, $where_params);
                 
             $data_count = Developer::select('id')
                 ->whereRaw($where_str, $where_params)
                 ->count();
 
-            $columns = ['id', 'name', 'designation', 'email', 'contact_number', 'skills'];
+            $columns = ['id', 'name', 'designation', 'email', 'contact_number'];
 
             if ($request->has('iDisplayStart') && $request->get('iDisplayLength') != '-1') {
                 $data = $data->take($request->get('iDisplayLength'))->skip($request->get('iDisplayStart'));
@@ -114,7 +115,9 @@ class DeveloperController extends Controller
     public function edit($id)
     {
         $data = Developer::find($id);
-
+        
+        $data['skills'] = DeveloperSkill::where('developer_id', $id)->pluck('skill_id')->toArray();
+        
         $skills = Skill::pluck('title', 'id')->toArray();
 
         return view('admin.developer.edit', compact('data', 'skills'));

@@ -2,6 +2,8 @@
 
 namespace App\Helpers;
 use DB;
+use App\Models\Skill;
+use App\Models\DeveloperSkill;
 
 class Helper
 {
@@ -16,5 +18,11 @@ class Helper
           $enum[$v] = $v;
         }
         return $enum;
-      }
+    }
+
+    public static function getDeveloperSkills($id) {
+        $skillIds = DeveloperSkill::where('developer_id', $id)->pluck('skill_id', 'skill_id')->toArray();
+        $skills = Skill::whereIn('id', $skillIds)->pluck('title', 'title')->toArray();
+        return implode(', ', $skills);
+    }
 }

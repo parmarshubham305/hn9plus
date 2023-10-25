@@ -66,6 +66,11 @@
                     <li class="@if(Request::segment(2) == 'developers' && Request::segment(3) == 'create') active @endif"><a href="{{ route('admin.developers.create') }}"><i class="fa fa-circle-o"></i> Create </a></li>
                 </ul>
             </li>
+            <li class="@if(Request::segment(2) == 'chats') active @endif">
+                <a href="{{ route('admin.chats.index') }}">
+                    <i class="fa fa-comments"></i> <span>Chats</span>
+                </a>
+            </li>
         </ul>
     </section>
 </aside>

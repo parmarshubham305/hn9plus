@@ -44,8 +44,10 @@ class FixedRateController extends Controller
         $params = $request->all();
 
         dispatch(new FixedRateFormJob($params));
+
+        $created = ProjectQuote::where('user_id', \Auth::user()->id)->orderBy('id', 'DESC')->first();
  
-        return redirect()->back()->with('message', 'Record Saved Successfully.')
+        return redirect()->route('front.hire.resource', ['fixed-rate',$created['id']])->with('message', 'Record Saved Successfully.')
             ->with('type', 'success');
     }
 

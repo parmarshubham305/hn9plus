@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Skill;
+use App\Models\ProjectQuote;
 use App\Http\Requests\Front\HourlyRateFormRequest;
 use App\Jobs\Front\HourlyRateFormJob;
 
@@ -43,8 +44,10 @@ class HourlyRateController extends Controller
         $params = $request->all();
 
         dispatch(new HourlyRateFormJob($params));
- 
-        return redirect()->back()->with('message', 'Record Saved Successfully.')
+
+        $created = ProjectQuote::where('user_id', \Auth::user()->id)->orderBy('id', 'DESC')->first();
+        
+        return redirect()->route('front.hire.resource', ['hourly-rate',$created['id']])->with('message', 'Record Saved Successfully.')
             ->with('type', 'success');
     }
 

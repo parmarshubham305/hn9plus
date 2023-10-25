@@ -24,7 +24,6 @@ class CreateDevelopersTable extends Migration
             $table->text('address')->nullable();
             $table->string('email');
             $table->longText('education')->nullable();
-            $table->longText('skills')->nullable();
             $table->timestamps();
         });
     }

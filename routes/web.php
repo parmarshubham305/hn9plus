@@ -28,5 +28,11 @@ Route::group(['as' => 'front.', 'namespace' => 'Front', 'middleware' => ['auth']
     
     Route::resource('hourly-rate', 'HourlyRateController');
 
+    Route::resource('dashboard', 'DashboardController');
+    Route::get('chat', 'DashboardController@chat')->name('chat');
+
+    Route::get('resources/{id}', 'HireResourceController@viewResume')->name('view.resume');
+
     Route::get('{type}/{id}/hire-resources', 'HireResourceController@create')->name('hire.resource');
+
 });

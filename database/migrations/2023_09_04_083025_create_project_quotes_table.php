@@ -24,6 +24,7 @@ class CreateProjectQuotesTable extends Migration
             $table->double('estimated_price', [10,2])->nullable();
             $table->string('payment_type');
             $table->enum('quote_type', ['Fixed Rate', 'Hourly Rate'])->nullable();
+            $table->enum('status', ['Pending'])->default('Pending');
             $table->string('file')->nullable();
             $table->timestamps();
             $table->foreign('user_id')

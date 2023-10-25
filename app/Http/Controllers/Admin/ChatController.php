@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Front;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use PDF;
+use App\Models\Chat;
 
-class HireResourceController extends Controller
+class ChatController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,9 @@ class HireResourceController extends Controller
      */
     public function index()
     {
-        //
+        $chats = Chat::get()->toArray();
+
+        return view('admin.chat.index', compact('chats'));
     }
 
     /**
@@ -23,9 +25,9 @@ class HireResourceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($type, $id)
+    public function create()
     {
-        return view('frontend.hire_resource.create', compact('id'));
+        //
     }
 
     /**
@@ -83,10 +85,4 @@ class HireResourceController extends Controller
     {
         //
     }
-
-    public function viewResume(Request $request, $id) {
-        $pdf = PDF::loadView('frontend.resume');
-        // $pdf->download('invoice.pdf');
-        return $pdf->stream();
-    } 
 }

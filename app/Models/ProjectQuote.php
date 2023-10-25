@@ -29,4 +29,8 @@ class ProjectQuote extends Model
     public function user() {
         return $this->belongsTo('App\Models\User');
     }
+
+    public function hiredResources() {
+        return $this->hasOne('App\Models\ProjectHiredResource', 'project_quotes_id');
+    }
 }

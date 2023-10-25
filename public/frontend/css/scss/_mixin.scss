@@ -304,3 +304,73 @@
         }
     }
 }
+
+.dashboard-section{
+    .hire-tablist{
+        .nav-link {
+            border: none;
+            border-radius: 0;
+            @include fontSize(20px);
+            color:#000000  !important;
+            font-family: 'poppinssemibold', 'sans-serif';
+            &.active ,&:hover {
+                color: $primary !important;
+                border-bottom: 3px solid $primary !important;
+                border: none;
+                border-radius: 0;
+
+            }
+        }
+        
+    }
+    .tab-content{
+        h5{
+            span {
+                font-family: 'poppinssemibold', 'sans-serif';
+            }
+        }
+        .slick-track{
+            display: flex;
+            min-width: 100%;
+        }
+        .project-status {
+            position: absolute;
+            top: 40px;
+            right: 70px;
+        }
+        .form-control{
+            &[disabled]{
+                background: rgba(0,0,0,0) !important;
+                border: none !important;
+                font-family: "poppinssemibold","sans-serif";
+                width: 20px !important;
+                padding: 3px 0px !important;
+            }
+        }
+    }
+    .ticket-table{
+        th{
+            height: 50px;
+            background-color: #F3F3F3;
+            border-bottom: 1px solid #DBDBDB;
+        }
+        th,td{
+            padding:0.8rem 1.2rem; 
+        }
+    }
+    
+    .carousel-control-prev{
+        left:-20px;
+    }
+    .carousel-control-next{
+        right: -5px;
+    }
+    
+}
+.form-control[type="file"]{
+    border: none;
+    padding-left: 1rem;
+    &::file-selector-button{
+        display: none;
+    }
+}

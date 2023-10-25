@@ -45,7 +45,7 @@
                         </div>
                             <div class="mb-md-4 mb-3">
                             <h3 class="mb-3">Estimated Price (optional)</h3>
-                            {{ Form::text('estimated_price', old('estimated_price'), ['class' => 'form-control', 'placeholder' => 'Estimated Price (optional)']) }}
+                            {{ Form::number('estimated_price', old('estimated_price'), ['class' => 'form-control', 'placeholder' => 'Estimated Price (optional)']) }}
                         </div>
                         <div class="mb-md-4 mb-3">
                             <h3 class="mb-3">Payment Milestone</h3>
