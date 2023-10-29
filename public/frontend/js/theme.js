@@ -5,7 +5,10 @@ $(document).ready(function () {
         $(".search-bar").toggleClass("search-on");
     });
     $('#loginpopup').modal('show');
-
+    $('#toggle').on('click', function () {
+		$('body').toggleClass('show-sidebar');
+    });
+    
     $('#qty_input').prop('disabled', true);
     $('#plus-btn').click(function () {
         $('#qty_input').val(parseInt($('#qty_input').val()) + 1);
