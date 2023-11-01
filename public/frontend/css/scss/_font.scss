@@ -80,15 +80,33 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-Chat:before {
+.icon-emp-dashboard:before {
   content: "\e900";
 }
-.icon-cart:before {
+.icon-emp-user:before {
   content: "\e901";
 }
-.icon-user:before {
+.icon-emp-chat:before {
   content: "\e902";
 }
-.icon-Search:before {
+.icon-emp-watch:before {
   content: "\e903";
+}
+.icon-emp-file:before {
+  content: "\e904";
+}
+.icon-emp-person:before {
+  content: "\e905";
+}
+.icon-Chat:before {
+  content: "\e906";
+}
+.icon-cart:before {
+  content: "\e907";
+}
+.icon-user:before {
+  content: "\e908";
+}
+.icon-Search:before {
+  content: "\e909";
 }
