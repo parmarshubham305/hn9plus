@@ -47,7 +47,7 @@
                 <div class="login shadow bg-primary rounded-3 overflow-hidden">
                     <div class="row">
                         <div class="col-md-6 align-self-center">
-                            <h2 class="text-white pb-lg-0 pb-0 p-lg-5 p-3">Welcome to HN9+ Freelancer</h2>
+                            <h2 class="text-white pb-lg-0 pb-0 p-lg-5 p-3">Welcome to HN9+</h2>
                             <div id="carouselExampleIndicators" class="carousel slide p-lg-5 p-3 pt-lg-0 pt-0"
                                 data-bs-ride="true">
                                 <div class="carousel-indicators">
