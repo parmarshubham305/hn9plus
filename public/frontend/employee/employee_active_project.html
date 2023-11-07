@@ -1,0 +1,251 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HN9+</title>
+    <link rel="stylesheet" href="../thirdparty/css/all.min.css">
+    <link rel="stylesheet" href="../thirdparty/css/slick.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="text/javascript" src="../js/bootstrap.bundle.js"></script>
+    <script type="text/javascript" src="../thirdparty/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../thirdparty/js/all.min.js"></script>
+    <script type="text/javascript" src="../thirdparty/js/slick.min.js"></script>
+    <script type="text/javascript" src="../js/theme.js"></script>
+</head>
+
+<body>
+    <style>
+        .bg-light-blue {
+            background-color: #BDE6FF;
+        }
+
+        .bg-cercle-blue {
+            background: #143E57;
+        }
+
+        .bg-light-yellow {
+            background-color: #FFEFCC;
+        }
+
+        .bg-cercle-yellow {
+            background: #F0A80B;
+        }
+
+        .dashboard_card_header {
+            border-radius: 100%;
+
+            /* display: flex; */
+            padding: 10px;
+            position: relative;
+            height: 204px;
+            width: 204px;
+            /* justify-content: center;
+        align-items: center; */
+            left: -32px;
+            top: -50;
+            /* z-index: -1; */
+        }
+
+        .dashboard_card_header h4 {
+            font-size: 70px;
+            color: #fff;
+            position: absolute;
+            bottom: -6%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .dashboard-active,
+        .dashboard-active svg {
+            color: #fff;
+            fill: #fff;
+        }
+
+        .nav-pills .dashboard-active.active {
+            background-color: #fff;
+            color: #143E57;
+        }
+
+        .nav-pills .dashboard-active.active svg {
+            /* color: #143E57; */
+            fill: #143E57;
+        }
+
+        .dashboard-active:hover {
+            background-color: #fff;
+            color: #143E57;
+        }
+
+        .dashboard-active:hover svg {
+            fill: #143E57;
+        }
+
+
+        @media (max-width: 600px) {
+            .dashboard_card_header {
+                height: 130px;
+                width: 130px;
+            }
+
+            .dashboard_card_header h4 {
+                font-size: 32px;
+                bottom: -3%;
+                left: 55%;
+            }
+        }
+
+        .page-item.active .page-link {
+            background-color: #F0A80B !important;
+        }
+    </style>
+
+    <main>
+      
+       
+        <div class="sidebar" id="sidebar">
+            <div class="border-bottom mb-4 p-3">
+                <img src="../images/employee-Logo.png" alt="employee Logo" width="81" height="81" class="img-fluid">
+            </div>
+            <ul class="list-unstyled mb-0 sidebar-menu">
+                <li>
+                    <a href="#">
+                        <i class="custom icon-emp-dashboard fa-lg"></i><span>  Dashboard</span> 
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="custom icon-emp-user fa-lg"></i><span>  Employee</span> 
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="" data-bs-toggle="collapse" data-bs-target="#Task"
+                        aria-expanded="false"> <i class="custom icon-emp-watch fa-lg"></i><span> Task Management</span></a>
+                    <ul id="Task" class="list-unstyled collapse" data-parent=".sidebar-menu">
+                        <li><a href="#"><span>Active Project</span></a></li>
+                        <li><a href="#"><span>Active Tickets</span></a></li>
+                        <li><a href="#"><span>Total Projects</span></a></li>
+                        <li><a href="#"><span>Total Ticket</span></a></li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#">
+                        <i class="custom icon-emp-file fa-lg"></i><span> Chat Board </span> 
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="custom icon-emp-person fa-lg"></i> <span> Profile</span> 
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="right-side">
+            <div class="bg-white p-4 d-flex justify-content-between">
+                <button id="toggle" type="button" class="navbar-toggler ">
+                    <span class="line-one"></span>
+                    <span class="line-two"></span>
+                    <span class="line-three"></span>
+                </button>
+                <div class="dropdown">
+                    <a class="btn border-0 dropdown-toggle fs-5" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Hello, John  <i class="custom icon-emp-user fa-lg ms-2"></i> </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="right-contnet p-0">
+                <div class="employee_active_project">
+                    <div class="section_heading d-flex justify-content-between bg-secondary py-3">
+                        <h1 class="text-white mb-0 ms-3">Active Projects</h1>
+                    </div>
+                    <div class="accordion p-4 " id="accordionExample">
+                        <div class="accordion-item">
+                        <h2 class="accordion-header mb-0" id="headingOne">
+                            <button class="accordion-button bg-primary text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Hn9 Development
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div class="col-lg-10">
+                                        <p>Lorem ipsum dolor sit amet consectetur. Aenean quis scelerisque ut faucibus sagittis. Morbi nec sed vulputate urna aliquam condimentum. Quam tellus bibendum rhoncus nisi. Aenean mauris mollis ultricies nunc amet duis imperdiet euismod. Lorem ipsum dolor sit amet consectetur. Aenean quis scelerisque ut faucibus sagittis. Morbi nec sed vulputate urna aliquam condimentum. Quam tellus bibendum rhoncus nisi. Aenean mauris mollis ultricies nunc amet duis imperdiet euismod.</p>
+                                    </div>
+                                    <div class="col-lg-2 text-lg-end mb-lg-0 mb-3">
+                                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                            <i class="fas fa-lg fa-plus me-2"></i> Log Hours
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-lg-3 col-md-6">
+                                        <h5><strong>Atteched File</strong></h5>
+                                        <p>xyz.png</p>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6">
+                                        <h5><strong>Status</strong></h5>
+                                        <p>InProgress</p>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6">
+                                        <h5><strong>Estimated Time</strong></h5>
+                                        <p>4.5 hours</p>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6">
+                                        <h5><strong>Spent Time</strong></h5>
+                                        <p>3.5 hours</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<!-- model -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Hn9 Development</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="dateinput" class="form-label"><strong>Date</strong></label>
+                        <input type="date" class="form-control" id="date">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="timeinput" class="form-label"><strong>Log Hours</strong></label>
+                        <input type="time" class="form-control" id="time">
+                    </div>
+                </div>
+                <div class="col-12 mt-3">
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label"><strong>Description</strong></label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
