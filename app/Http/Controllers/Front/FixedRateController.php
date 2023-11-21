@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Front\FixedRateFormRequest;
-use App\Models\ProjectQuote;
+use App\Models\Project;
 use App\Models\Skill;
 use App\Jobs\Front\FixedRateFormJob;
 
@@ -45,7 +45,7 @@ class FixedRateController extends Controller
 
         dispatch(new FixedRateFormJob($params));
 
-        $created = ProjectQuote::where('user_id', \Auth::user()->id)->orderBy('id', 'DESC')->first();
+        $created = Project::where('user_id', \Auth::user()->id)->orderBy('id', 'DESC')->first();
  
         return redirect()->route('front.hire.resource', ['fixed-rate',$created['id']])->with('message', 'Record Saved Successfully.')
             ->with('type', 'success');

@@ -10,7 +10,7 @@ class ProjectHiredResource extends Model
     use HasFactory;
 
     protected $fillable = [
-        'project_quotes_id',
+        'project_id',
         'resources'
     ];
 }

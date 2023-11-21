@@ -44,9 +44,9 @@ class HireResource extends Component
         }
         
         ProjectHiredResource::updateOrCreate([
-            'project_quotes_id' => $this->projectId,
+            'project_id' => $this->projectId,
         ],[
-            'project_quotes_id' => $this->projectId,
+            'project_id' => $this->projectId,
             'resources' => json_encode($filtered)
         ]);
 

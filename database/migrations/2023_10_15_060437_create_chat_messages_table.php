@@ -16,12 +16,16 @@ class CreateChatMessagesTable extends Migration
         Schema::create('chat_messages', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('chat_id');
+            $table->unsignedBigInteger('user_id');
             $table->longText('message');
             $table->enum('message_type', ['Text', 'Media'])->default('Text');
-            $table->enum('send_by', ['Admin', 'User'])->default('User');
+            $table->enum('send_by', ['Admin', 'User', 'Developer', 'Manager'])->default('User');
             $table->enum('is_seen', ['0', '1'])->default('0');
             $table->foreign('chat_id')
             ->references('id')->on('chats')
+            ->onDelete('cascade');
+            $table->foreign('user_id')
+            ->references('id')->on('users')
             ->onDelete('cascade');
             $table->timestamps();
         });

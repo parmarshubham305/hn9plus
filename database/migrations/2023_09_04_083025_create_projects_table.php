@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProjectQuotesTable extends Migration
+class CreateProjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateProjectQuotesTable extends Migration
      */
     public function up()
     {
-        Schema::create('project_quotes', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('project_manager_id')->nullable();
             $table->string('title');
             $table->string('skills');
             $table->string('timeline');
@@ -23,6 +24,7 @@ class CreateProjectQuotesTable extends Migration
             $table->string('experience_level')->nullable();
             $table->double('estimated_price', [10,2])->nullable();
             $table->string('payment_type');
+            $table->enum('is_project', ['0', '1'])->default('0');
             $table->enum('quote_type', ['Fixed Rate', 'Hourly Rate'])->nullable();
             $table->enum('status', ['Pending'])->default('Pending');
             $table->string('file')->nullable();

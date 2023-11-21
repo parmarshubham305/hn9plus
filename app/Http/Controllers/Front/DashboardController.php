@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\ProjectQuote;
+use App\Models\Project;
 use App\Models\Chat;
+use App\Models\ChatUser;
+use App\Models\ChatMessage;
 use App\Models\Admin;
 use Illuminate\Support\Str;
 
@@ -18,7 +20,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $quotes = ProjectQuote::where('user_id', \Auth::user()->id)->where('status', 'Pending')->with('hiredResources')->get()->toArray();
+        $quotes = Project::where('user_id', \Auth::user()->id)->where('status', 'Pending')->with('hiredResources')->get()->toArray();
         
         return view('frontend.dashboard', compact('quotes'));
     }
@@ -91,19 +93,10 @@ class DashboardController extends Controller
 
     public function chat(Request $request) 
     {
-        $admin = Admin::first();
+        $chatIn = ChatUser::where('user_id', auth()->user()->id)->pluck('chat_id', 'chat_id')->toArray();
 
-        $randomString = Str::random(7);
-
-        $user = Chat::where(['admin_id' => $admin['id'], 'user_id' => auth()->user()->id])->firstOr(function () use ($admin, $randomString) {
-            return Chat::create([
-                'admin_id' => $admin['id'],
-                'user_id' => auth()->user()->id,
-                'channel' => $randomString
-            ]);
-        });
-        $chatChannel = $user['channel'];
-
-        return view('frontend.chat', compact('user', 'chatChannel'));
+        $chats = Chat::whereIn('id', $chatIn)->get()->toArray();
+        
+        return view('frontend.chat', compact('chats'));
     }
 }

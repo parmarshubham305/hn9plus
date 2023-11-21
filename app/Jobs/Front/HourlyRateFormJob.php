@@ -2,7 +2,7 @@
 
 namespace App\Jobs\Front;
 
-use App\Models\ProjectQuote;
+use App\Models\Project;
 
 class HourlyRateFormJob
 {
@@ -28,7 +28,7 @@ class HourlyRateFormJob
         if (!isset($this->data['id'])) {
             $this->data['id'] = null;
         }
-        $data = ProjectQuote::firstOrNew(['id' => $this->data['id']]);
+        $data = Project::firstOrNew(['id' => $this->data['id']]);
         
         $this->data['quote_type'] = 'Hourly Rate';
         $data->fill($this->data);

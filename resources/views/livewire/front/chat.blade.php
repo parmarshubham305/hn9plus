@@ -2,13 +2,17 @@
     <div class="container">
         <div class="row g-0">
             <div class="col-lg-3 border-start border-end d-lg-inline-block d-none">
-                <div class="user-profile px-4 py-2 d-flex align-items-center border-bottom">
+                @if($chats)
+                @foreach($chats as $chat)
+                <div wire:click="selectChat({{ $chat['id'] }})" class="user-profile px-4 py-2 d-flex align-items-center border-bottom">
                     <!-- <img src="images/user-grey.png" alt="user-grey" class="img-fluid" width="58" height="58"> -->
                     <div class="user ms-4">
-                        <h4 class="mb-1 fs-5">Admin</h4>
+                        <h4 class="mb-1 fs-5">{{ $chat['title'] }}</h4>
                         <!-- <small class="text-muted"><i class="fa-solid fa-circle fa-xs me-1 text-success"></i>Online</small> -->
                     </div>
                 </div>
+                @endforeach
+                @endif
                 <!-- <div class="userr-details px-4 py-3">
                     <address class="mb-0 fs-6">
                         9:12 PM GMT+2 (3.5h behind)
@@ -18,12 +22,14 @@
             </div>
             <div class="col-lg-9 border-start border-end d-flex flex-column">
                 <div class="chat-header px-4 py-2 d-flex align-items-center border-bottom">
-                    <div class="user-profile d-lg-none d-flex align-items-center border-bottom">
-                        <img src="images/user-grey.png" alt="user-grey" class="img-fluid" width="40" height="40">
+                    <div class="user-profile d-flex align-items-center border-bottom">
+                        <img src="{{ asset('frontend/images/user-grey.png') }}" alt="user-grey" class="img-fluid" width="40" height="40">
+                        @if($selectedChat)
                         <div class="user ms-4">
-                            <h4 class="mb-1 fs-6">John Doe</h4>
+                            <h4 class="mb-1 fs-6">{{ $selectedChat['title'] }}</h4>
                             <small class="text-muted"><i class="fa-solid fa-circle fa-xs me-1 text-success"></i>Online</small>
                         </div>
+                        @endif
                     </div>
                     <ul class="list-unstyled list-inline mb-0 ms-auto me-0">
                         <li class="list-inline-item me-3 me-md-4">
@@ -37,7 +43,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="message px-md-4 px-3" id="element" wire:ignore>
+                <div class="message px-md-4 px-3" id="element" wire:ignor>
                     @if($messages)
                     @foreach($messages as $message)
                     @php

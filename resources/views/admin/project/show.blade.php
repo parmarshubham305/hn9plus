@@ -7,7 +7,7 @@
     </h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('admin.dashboard.index') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="{{ route('admin.quotes.index') }}">Quotes</a></li>
+        <li><a href="{{ route('admin.projects.index') }}">Quotes</a></li>
         <!-- <li class="active">Invoice</li> -->
     </ol>
 </section>
@@ -30,7 +30,25 @@
             </p>
         </div>
         <div class="col-xs-8">
+            <div class="row">
+            <div class="col-xs-4">
             <p class="lead">Details</p>
+            </div>
+            <div class="col-xs-8">
+            {{ Form::model($data,['route' => ['admin.projects.update', $data['id']], 'method' => 'PATCH', 'class' => 'form-horizontal', 'files' => true]) }}
+            <input type="hidden" name="id" value="{{ $data['id'] }}">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-4 control-label">Manager</label>
+                        <div class="col-sm-8">
+                            {{ Form::select('project_manager_id', $projectManagers, old('project_manager_id'), ['class' => 'form-control', 'id' => 'project_manager_id', 'placeholder' => 'Assign Manager' ]) }}
+                        <span class='text-danger'>{{ $errors->first('project_manager_id') }}</span>
+                        </div>
+                    </div>
+                </div>
+            {{ Form::close() }}
+            </div>    
+        </div>
             <div class="table-responsive">
                 <table class="table">
                     <tr>
@@ -90,4 +108,12 @@
     </div> -->
 </section>
 <div class="clearfix"></div>
+@stop
+@section('js')
+<script>
+    var select = document.getElementById('project_manager_id');
+    select.addEventListener('change', function(){
+        this.form.submit();
+    }, false);
+</script>
 @stop

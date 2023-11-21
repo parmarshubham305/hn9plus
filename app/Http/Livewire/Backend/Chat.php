@@ -7,6 +7,7 @@ use \App\Models\User;
 use \App\Models\Admin;
 use App\Models\Chat as ChatChannel;
 use App\Models\ChatMessage;
+use App\Models\ChatUser;
 use Livewire\WithFileUploads; 
 
 class Chat extends Component
@@ -24,18 +25,18 @@ class Chat extends Component
     
     public function mount()
     {
-        $this->chats = ChatChannel::with('user')->get()->toArray();
+        $chatIn = ChatUser::where('user_id', auth()->guard('admin')->user()->id)->where('user_type', 'Admin')->pluck('chat_id', 'chat_id')->toArray();
+        
+        $this->chats = ChatChannel::whereIn('id', $chatIn)->get()->toArray();
+
         $this->admin = Admin::first();
-        $this->chatUser = $this->chats[0]['user'];
-        $this->chatId = $this->chats[0]['id'];
-        $this->chatChannel = $this->chats[0]['channel'];
-        $this->messages = ChatMessage::where('chat_id', $this->chatId)->get();
     }
 
     public function SendMessage() {
         $obj = new ChatMessage();
         $obj->message = $this->message;
         $obj->chat_id = $this->chatId;
+        $obj->user_id = auth()->guard('admin')->user()->id;
         $obj->send_by = 'Admin';
         $obj->message_type = 'Text';
         $obj->save();
@@ -45,7 +46,7 @@ class Chat extends Component
             'send_by' => 'Admin',
         ]; 
 
-        $this->emit($this->chatChannel, $broadcastData);
+        $this->emit($this->chatChannel['channel'], $broadcastData);
         
         // Clear the message after it's sent
         $this->reset(['message']);
@@ -53,12 +54,12 @@ class Chat extends Component
     }
 
 
-    public function getUser($user_id) 
+    public function getChat($id) 
     {
-        $this->chatUser = User::find($user_id);
-        $this->chatId = ChatChannel::where('admin_id', $this->admin['id'])->where('user_id', $user_id)->value('id');
-        $this->messages = ChatMessage::where('chat_id', $this->chatId)->get();
-        $this->chatChannel = ChatChannel::where('admin_id', $this->admin['id'])->where('user_id', $user_id)->value('channel');
+        $this->chatChannel = ChatChannel::find($id);
+        $this->chatId = $id;
+        $this->messages = ChatMessage::where('chat_id', $id)->get()->toArray();
+        $this->emit('scrollToHeight');
     }
 
     public function render()

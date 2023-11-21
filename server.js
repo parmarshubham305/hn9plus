@@ -32,7 +32,6 @@ io.on("connection", (socket) => {
     console.log("Socket");
     
     chatChannels.forEach((chat) => {
-        
         socket.on(chat.channel, (message) => {
             io.sockets.emit(chat.channel, message);
         });

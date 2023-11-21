@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\Backend\ProjectJob;
 use Illuminate\Http\Request;
-use App\Models\ProjectQuote;
+use App\Models\Project;
+use App\Models\ProjectManager;
 use App\Models\Skill;
 
-class QuoteController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,16 +29,18 @@ class QuoteController extends Controller
                     . ")";
             }
             
-            $data = ProjectQuote::select('project_quotes.id', 'users.first_name as user', 'quote_type', 'title', 'timeline', 'payment_type')
-                ->leftjoin('users','users.id', '=', 'project_quotes.user_id')
+            $data = Project::select('projects.id', 'users.first_name as user', 'project_managers.name as manager', 'is_project', 'quote_type', 'title', 'timeline', 'payment_type')
+                ->leftjoin('users','users.id', '=', 'projects.user_id')
+                ->leftjoin('project_managers','project_managers.id', '=', 'projects.project_manager_id')
                 ->whereRaw($where_str, $where_params);
                 
-            $data_count = ProjectQuote::select('project_quotes.id')
-                ->leftjoin('users','users.id', '=', 'project_quotes.user_id')
+            $data_count = Project::select('projects.id')
+                ->leftjoin('users','users.id', '=', 'projects.user_id')
+                ->leftjoin('project_managers','project_managers.id', '=', 'projects.project_manager_id')
                 ->whereRaw($where_str, $where_params)
                 ->count();
 
-            $columns = ['id', 'user', 'quote_type', 'title', 'timeline', 'payment_type'];
+            $columns = ['id', 'user', 'manager', 'is_project', 'quote_type', 'title', 'timeline', 'payment_type'];
 
             if ($request->has('iDisplayStart') && $request->get('iDisplayLength') != '-1') {
                 $data = $data->take($request->get('iDisplayLength'))->skip($request->get('iDisplayStart'));
@@ -63,7 +67,7 @@ class QuoteController extends Controller
             return $response;
         }
 
-        return view('admin.quote.index');
+        return view('admin.project.index');
     }
 
     /**
@@ -95,11 +99,13 @@ class QuoteController extends Controller
      */
     public function show($id)
     {
-        $data = ProjectQuote::with('user')->find($id);
+        $data = Project::with('user')->find($id);
+
+        $projectManagers = ProjectManager::pluck('name', 'id')->toArray();
         
         $skills = Skill::whereIn('id', json_decode($data['skills'], true))->pluck('title', 'id')->toArray();
 
-        return view('admin.quote.show', compact('data', 'skills'));
+        return view('admin.project.show', compact('data', 'skills', 'projectManagers'));
     }
 
     /**
@@ -122,7 +128,12 @@ class QuoteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $params = $request->all();
+        
+        dispatch(new ProjectJob($params));
+ 
+        return redirect()->back()->with('message', 'Record Saved Successfully.')
+            ->with('type', 'success');
     }
 
     /**
@@ -139,7 +150,7 @@ class QuoteController extends Controller
             $id = array($id);
         }
         
-        ProjectQuote::whereIn('id',$id)->delete();
+        Project::whereIn('id',$id)->delete();
 
         return redirect()->back()->with('message', 'Record Deleted Successfully.')
             ->with('type', 'success');

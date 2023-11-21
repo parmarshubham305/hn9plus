@@ -19,6 +19,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     public const HOME = '/'; 
     public const ADMIN_HOME = '/admin/dashboard';
+    public const PROJECT_MANAGER_HOME = '/project-manager/dashboard';
 
     /**
      * The controller namespace for the application.
@@ -48,6 +49,11 @@ class RouteServiceProvider extends ServiceProvider
                 ->namespace('App\Http\Controllers\Admin')
                 ->middleware('web')
                 ->group(base_path('routes/admin.php'));
+
+            Route::prefix('project-manager')
+                ->namespace('App\Http\Controllers\ProjectManager')
+                ->middleware('web')
+                ->group(base_path('routes/project_manager.php'));
 
             Route::middleware('web')
                 ->namespace('App\Http\Controllers')

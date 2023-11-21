@@ -38,6 +38,8 @@ class UserJob
 
         if(isset($this->data['_method']) && $this->data['_method'] == 'PATCH' && $this->data['password'] == '') {
             unset($this->data['password']);
+        } else {
+            $this->data['password'] = \Hash::make($this->data['password']);
         }
         
         $data->fill($this->data);

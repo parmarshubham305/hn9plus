@@ -9,8 +9,13 @@ class ChatMessage extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'created_at' => 'datetime'
+    ];
+
     protected $fillable = [
         'chat_id',
+        'user_id',
         'message',
         'message_type',
         'send_by',

@@ -33,6 +33,10 @@
                 socket.emit(chat.channel, data);
             });
 
+            Livewire.on('scrollToHeight', data => {
+                element.scrollTop = element.scrollHeight;
+            });
+
             socket.on(chat.channel, (data) => {
                 var cssClass = (data.send_by == 'Admin' ? 'right' : '');
                 var html = `<div class="direct-chat-msg `+cssClass+`">

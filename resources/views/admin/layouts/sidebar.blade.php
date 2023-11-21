@@ -31,15 +31,15 @@
                     <li class="@if(Request::segment(2) == 'users' && Request::segment(3) == 'create') active @endif"><a href="{{ route('admin.users.create') }}"><i class="fa fa-circle-o"></i> Create </a></li>
                 </ul>
             </li>
-            <li class="@if(Request::segment(2) == 'quotes') active @endif treeview">
+            <li class="@if(Request::segment(2) == 'projects') active @endif treeview">
                 <a href="#">
-                    <i class="fa fa-handshake-o"></i> <span>Quote</span>
+                    <i class="fa fa-handshake-o"></i> <span>Projects</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="@if(Request::segment(2) == 'quotes' && Request::segment(3) == '') active @endif"><a href="{{ route('admin.quotes.index') }}"><i class="fa fa-circle-o"></i> List </a></li>
+                    <li class="@if(Request::segment(2) == 'projects' && Request::segment(3) == '') active @endif"><a href="{{ route('admin.projects.index') }}"><i class="fa fa-circle-o"></i> List </a></li>
                 </ul>
             </li>
             <li class="@if(Request::segment(2) == 'skills') active @endif treeview">
@@ -52,6 +52,18 @@
                 <ul class="treeview-menu">
                     <li class="@if(Request::segment(2) == 'skills' && Request::segment(3) == '') active @endif"><a href="{{ route('admin.skills.index') }}"><i class="fa fa-circle-o"></i> List </a></li>
                     <li class="@if(Request::segment(2) == 'skills' && Request::segment(3) == 'create') active @endif"><a href="{{ route('admin.skills.create') }}"><i class="fa fa-circle-o"></i> Create </a></li>
+                </ul>
+            </li>
+            <li class="@if(Request::segment(2) == 'project-managers') active @endif treeview">
+                <a href="#">
+                    <i class="fa fa-superpowers"></i> <span>Project Manager</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="@if(Request::segment(2) == 'project-managers' && Request::segment(3) == '') active @endif"><a href="{{ route('admin.project-managers.index') }}"><i class="fa fa-circle-o"></i> List </a></li>
+                    <li class="@if(Request::segment(2) == 'project-managers' && Request::segment(3) == 'create') active @endif"><a href="{{ route('admin.project-managers.create') }}"><i class="fa fa-circle-o"></i> Create </a></li>
                 </ul>
             </li>
             <li class="@if(Request::segment(2) == 'developers') active @endif treeview">

@@ -10,12 +10,17 @@ class Chat extends Model
     use HasFactory;
 
     protected $fillable = [
-        'admin_id',
-        'user_id',
+        'chat_type',
+        'title',
         'channel',
+        'project_id'
     ];
 
-    public function user() {
-        return $this->belongsTo('App\Models\User');
+    public function messages() {
+        return $this->hasMany('App\Models\ChatMessage');
+    }
+
+    public function users() {
+        return $this->hasMany('App\Models\ChatUser');
     }
 }

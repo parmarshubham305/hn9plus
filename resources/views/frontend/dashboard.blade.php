@@ -22,7 +22,7 @@
                     id="hire-tab4" data-bs-toggle="tab" data-bs-target="#totalticket">Total Ticket</a>
             </li>
             <li class="nav-item pb-lg-0 pb-3 ms-auto me-0">
-                <a href="#" class="btn btn-primary"
+                <a href="{{ route('home') }}" class="btn btn-primary"
                     >New Project</a>
             </li>
         </ul>
