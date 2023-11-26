@@ -48,6 +48,10 @@ return [
             'driver' => 'session',
             'provider' => 'project_managers',
         ],
+        'developer' => [
+            'driver' => 'session',
+            'provider' => 'developers',
+        ],
     ],
 
     /*
@@ -79,6 +83,10 @@ return [
         'project_managers' => [
             'driver' => 'eloquent',
             'model' => App\Models\ProjectManager::class,
+        ],
+        'developers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Developer::class,
         ],
         // 'users' => [
         //     'driver' => 'database',
@@ -116,6 +124,12 @@ return [
         ],
         'project_managers' => [
             'provider' => 'project_managers',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'developers' => [
+            'provider' => 'developers',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

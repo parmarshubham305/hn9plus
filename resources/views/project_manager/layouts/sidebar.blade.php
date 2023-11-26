@@ -31,17 +31,6 @@
                     <li class="@if(Request::segment(2) == 'users' && Request::segment(3) == 'create') active @endif"><a href="{{ route('project_manager.users.create') }}"><i class="fa fa-circle-o"></i> Create </a></li>
                 </ul>
             </li>
-            <li class="@if(Request::segment(2) == 'quotes') active @endif treeview">
-                <a href="#">
-                    <i class="fa fa-handshake-o"></i> <span>Quote</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li class="@if(Request::segment(2) == 'quotes' && Request::segment(3) == '') active @endif"><a href="{{ route('project_manager.quotes.index') }}"><i class="fa fa-circle-o"></i> List </a></li>
-                </ul>
-            </li>
             <li class="@if(Request::segment(2) == 'developers') active @endif treeview">
                 <a href="#">
                     <i class="fa fa-superpowers"></i> <span>Developer</span>

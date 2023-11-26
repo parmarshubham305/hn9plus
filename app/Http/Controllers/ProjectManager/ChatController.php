@@ -5,6 +5,12 @@ namespace App\Http\Controllers\ProjectManager;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Chat;
+use App\Models\Project;
+use App\Models\Developer;
+use App\Models\User;
+use App\Models\ProjectHiredResource;
+use Illuminate\Support\Str;
+use App\Models\ChatUser;
 
 class ChatController extends Controller
 {
@@ -29,7 +35,11 @@ class ChatController extends Controller
      */
     public function create()
     {
-        //
+        $developers = Developer::pluck('name', 'id');
+
+        $projects = Project::pluck('title', 'id');
+
+        return view('project_manager.chat.create', compact('developers', 'projects'));
     }
 
     /**
@@ -40,7 +50,52 @@ class ChatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $params = $request->all();
+
+        $hiredResource = ProjectHiredResource::where('project_id', $params['project_id'])->first();
+
+        $developer = Developer::find($params['developer_id']);
+
+        if($hiredResource) {
+            $resources = json_decode($hiredResource['resources'], true);
+            foreach ($resources as $key => $resource) {
+                if($params['developer_id'] != $resource['id']) {
+                    $resources[] = $developer;
+                    ProjectHiredResource::create([
+                        'project_id' => $params['project_id'],
+                        'resources' => json_encode($resources)
+                    ]);
+                }
+            }
+        } else {
+            ProjectHiredResource::create([
+                'project_id' => $params['project_id'],
+                'resources' => json_encode($developer)
+            ]);
+        }
+
+        //--- Check Chat
+        $randomString = Str::random(7);
+        
+        $chat = Chat::create([
+            'project_id' => $params['project_id'],
+            'chat_type' => 'Group',
+            'channel' => $randomString,
+            'title' => $params['title']
+        ]);
+            
+        ChatUser::updateOrCreate([
+            'chat_id' => $chat['id'],
+            'user_id'  => $params['developer_id'],
+            'user_type' => 'Developer'
+        ],[
+            'chat_id' => $chat['id'],
+            'user_id'  => $params['developer_id'],
+            'user_type' => 'Developer'
+        ]);
+
+        return redirect()->back()->with('message', 'Record Created Successfully.')
+            ->with('type', 'success');
     }
 
     /**

@@ -23,6 +23,7 @@ class CreateDevelopersTable extends Migration
             $table->string('contact_number')->nullable();
             $table->text('address')->nullable();
             $table->string('email');
+            $table->string('password');
             $table->longText('education')->nullable();
             $table->timestamps();
         });

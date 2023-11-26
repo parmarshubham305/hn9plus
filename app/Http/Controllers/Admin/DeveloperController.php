@@ -115,6 +115,7 @@ class DeveloperController extends Controller
     public function edit($id)
     {
         $data = Developer::find($id);
+        unset($data['password']);
         
         $data['skills'] = DeveloperSkill::where('developer_id', $id)->pluck('skill_id')->toArray();
         

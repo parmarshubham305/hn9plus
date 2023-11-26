@@ -111,7 +111,7 @@ class ProjectManagerController extends Controller
     public function edit($id)
     {
         $data = ProjectManager::find($id);
-
+        unset($data['password']);
         return view('admin.project_manager.edit', compact('data'));
     }
 

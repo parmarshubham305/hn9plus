@@ -4,6 +4,9 @@
      <h1>
 		Chat 
      </h1>
+    <ol class="breadcrumb">
+		<li><a href="{{ route('project_manager.chats.create') }}">Create New Chat</a></li>
+	</ol>
 </section>
 <section class="content">
     <div class="row">

@@ -20,9 +20,6 @@ Route::group(['as' => 'project_manager.'], function () {
 	Route::group(['middleware' => ['project_manager', 'revalidate']], function () {
 		Route::resource('/dashboard', 'DashboardController');
 
-		Route::post('quotes/delete', 'QuoteController@delete')->name('quotes.delete');
-		Route::resource('/quotes', 'QuoteController');
-		
 		Route::post('developers/delete', 'DeveloperController@delete')->name('developers.delete');
 		Route::resource('/developers', 'DeveloperController');
 

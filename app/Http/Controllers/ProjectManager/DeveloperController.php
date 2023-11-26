@@ -64,7 +64,7 @@ class DeveloperController extends Controller
             return $response;
         }
 
-        return view('admin.developer.index');
+        return view('project_manager.developer.index');
     }
 
     /**
@@ -76,7 +76,7 @@ class DeveloperController extends Controller
     {
         $skills = Skill::pluck('title', 'id')->toArray();
 
-        return view('admin.developer.create', compact('skills'));
+        return view('project_manager.developer.create', compact('skills'));
     }
 
     /**
@@ -120,7 +120,7 @@ class DeveloperController extends Controller
         
         $skills = Skill::pluck('title', 'id')->toArray();
 
-        return view('admin.developer.edit', compact('data', 'skills'));
+        return view('project_manager.developer.edit', compact('data', 'skills'));
     }
 
     /**

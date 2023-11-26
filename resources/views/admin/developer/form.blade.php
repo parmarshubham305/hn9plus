@@ -18,6 +18,15 @@
 </div>
 <div class="box-body col-md-6">
 	<div class="form-group">
+		<label for="inputEmail3" class="col-sm-4 control-label">Password</label>
+		<div class="col-sm-8">
+			{{ Form::text('password', old('password'), ['class' => 'form-control', 'required' ]) }}
+		<span class='text-danger'>{{ $errors->first('password') }}</span>
+		</div>
+	</div>
+</div>
+<div class="box-body col-md-6">
+	<div class="form-group">
 		<label for="inputEmail3" class="col-sm-4 control-label">Designation</label>
 		<div class="col-sm-8">
 			{{ Form::text('designation', old('designation'), ['class' => 'form-control', 'required' ]) }}
