@@ -4,6 +4,7 @@ namespace App\Helpers;
 use DB;
 use App\Models\Skill;
 use App\Models\DeveloperSkill;
+use App\Models\SEO;
 
 class Helper
 {
@@ -24,5 +25,20 @@ class Helper
         $skillIds = DeveloperSkill::where('developer_id', $id)->pluck('skill_id', 'skill_id')->toArray();
         $skills = Skill::whereIn('id', $skillIds)->pluck('title', 'title')->toArray();
         return implode(', ', $skills);
+    }
+
+    public function seoContent() {
+        $route = \Request::route()->getName();
+        $content  = SEO::where('path', $route)->first();
+        
+        if($content)  {
+            $html = '<title>'.$content["title"].'</title>';
+            if(!empty($content['description'])) {
+                $html .= '<meta name="description" content="'.$content['description'].'"/>';
+            }
+            return $html;
+        } else {
+            return "";
+        }
     }
 }

@@ -46,6 +46,9 @@ Route::group(['as' => 'admin.'], function () {
 		Route::post('project-managers/delete', 'ProjectManagerController@delete')->name('project-managers.delete');
 		Route::resource('/project-managers', 'ProjectManagerController');
 
+		Route::post('seos/delete', 'SEOController@delete')->name('seos.delete');
+		Route::resource('/seos', 'SEOController');
+
 		Route::resource('/chats', 'ChatController');
 	});
 });
