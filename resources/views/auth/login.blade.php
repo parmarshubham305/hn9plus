@@ -87,23 +87,23 @@
                                 <h1 class="mb-lg-5 mb-md-4 mb-3">Login</h1>
                                 <form method="POST" action="{{ route('login') }}" class="text-center m-auto p-4">
                                     @csrf
-                                    <div class="mb-lg-5 mb-md-4 mb-3">
-                                        {{ Form::email('email', old('email'), ['placeholder' => 'Email ID', 'class' => 'form-control px-1', 'required']) }}
+                                    <div class="mb-md-4 mb-3">
+                                        {{ Form::email('email', old('email'), ['placeholder' => 'Email ID', 'class' => 'form-control', 'required']) }}
                                         @error('email')
                                             <span class="invalid-feedback" style="display: block;" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
                                     </div>
-                                    <div class="mb-md-4 mb-3 mb-lg-5">
-                                        {{ Form::password('password', ['class' => 'form-control px-1', 'placeholder' => 'Password']) }}
+                                    <div class="mb-md-4 mb-3">
+                                        {{ Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password']) }}
                                         @error('password')
                                             <span class="invalid-feedback" style="display: block;" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
                                     </div>
-                                    <div class="text-center mb-md-4 mb-3 mb-lg-5">
+                                    <div class="text-center mb-md-4 mb-3">
                                         <button type="submit" class="btn btn-secondary px-4">Log In</button>
                                     </div>
                                 </form>

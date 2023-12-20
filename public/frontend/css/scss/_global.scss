@@ -59,13 +59,13 @@ a {
     display:inline-block;
 }
 
-.form-control ,.form-select{
-    font-family: 'poppinsregular', sans-serif;
-}
 .form-check{
-    input,label{cursor: pointer;}
+    input,label{cursor: pointer;border-color:$border;  @include radius(5px);}
 }
-.form-control{border: unset;border-bottom:1px solid $border; border-radius: unset;font-family: 'OpenSans-Regular';
+
+.form-control{ font-family: 'poppinsregular', sans-serif;height:45px;line-height:45px;
+    border-color:$border;
+    @include radius(5px);
     &::placeholder{color: $border;}
     &:focus, &:active{
         border-color:$primary !important;

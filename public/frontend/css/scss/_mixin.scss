@@ -20,9 +20,6 @@
     font-size: $size; //Fallback in px
     font-size: calculateRem($size);
 }
-.form-control{border: unset;border-bottom:1px solid $border; border-radius: unset;font-family: 'OpenSans-Regular';
-    &::placeholder{color: $border;}
-}
 
 .chatboard{
     .user-profile{height:75px;
@@ -154,17 +151,10 @@
 .cutom_form{
     .form-control, .select2-search__field, .select2-selection{
         background-color: transparent;
-        padding:0.4rem 0rem;
         @include fontSize(18px);
         margin: 0;
-        border-width: 0px 0px 1px 0px !important;
-        border-color:$border;
         box-shadow: none  !important;
         outline: none  !important;
-        @include radius(0px);
-        .select2-selection__rendered{
-            padding: 0px;
-        }
         &:focus{
             box-shadow: none;
             outline: none;
@@ -181,10 +171,7 @@
         @include radius(50px !important);
     }
     textarea.form-control{
-        border:1px solid $border !important;
-        @include radius(5px);
         min-height:120px;
-        padding:0.3rem; 
         &:focus, &:active{
             border-color:$primary !important;
         }

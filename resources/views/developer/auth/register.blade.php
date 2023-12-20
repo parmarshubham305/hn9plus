@@ -12,32 +12,32 @@
                                 <p class="mb-lg-5 mb-md-4 mb-3 text-secondary">Register for new account</p>
                                 <form class="step-content demo-form" action="{{ route('register') }}" method="post" role="form">
                                     @csrf
-                                    <div class="mb-lg-5 mb-md-4 mb-3">
-                                        {{ Form::text('first_name', old('first_name'), ['placeholder' => 'First Name', 'class' => 'form-control px-1', 'required']) }}
+                                    <div class="mb-md-4 mb-3">
+                                        {{ Form::text('first_name', old('first_name'), ['placeholder' => 'First Name', 'class' => 'form-control', 'required']) }}
                                         @error('first_name')
                                             <span class="invalid-feedback" style="display: block;" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
                                     </div>
-                                    <div class="mb-md-4 mb-3 mb-lg-5">
-                                        {{ Form::text('last_name', old('last_name'), ['placeholder' => 'Last Name', 'class' => 'form-control px-1', 'required']) }}
+                                    <div class="mb-md-4 mb-3">
+                                        {{ Form::text('last_name', old('last_name'), ['placeholder' => 'Last Name', 'class' => 'form-control', 'required']) }}
                                         @error('last_name')
                                             <span class="invalid-feedback" style="display: block;" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
                                     </div>
-                                    <div class="mb-md-4 mb-3 mb-lg-5">
-                                        {{ Form::email('email', old('email'), ['placeholder' => 'Email', 'class' => 'form-control px-1', 'required']) }}
+                                    <div class="mb-md-4 mb-3">
+                                        {{ Form::email('email', old('email'), ['placeholder' => 'Email', 'class' => 'form-control', 'required']) }}
                                         @error('email')
                                             <span class="invalid-feedback" style="display: block;" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
                                     </div>
-                                    <div class="mb-md-4 mb-3 mb-lg-5">
-                                        {{ Form::password('password', ['class' => 'form-control px-1', 'placeholder' => 'Password']) }}
+                                    <div class="mb-md-4 mb-3">
+                                        {{ Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password']) }}
                                         @error('password')
                                             <span class="invalid-feedback" style="display: block;" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -45,7 +45,7 @@
                                         @enderror
                                     </div>
                                     <div class="mb-3 mb-md-4 mb-lg-5">
-                                        <input type="password" name="password_confirmation" class="form-control px-1" placeholder="Confirm Password" required />
+                                        <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Password" required />
                                     </div>
                                     <div class="mb-md-4 mb-3">
                                         <div class="form-check">

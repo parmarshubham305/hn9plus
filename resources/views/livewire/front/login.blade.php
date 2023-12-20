@@ -42,28 +42,28 @@
                     <div class="p-lg-5 p-3 bg-white overflow-hidden h-100">
                         <h1 class="mb-lg-5 mb-md-4 mb-3">Login</h1>
                         <form wire:submit.prevent class="text-center m-auto p-4">
-                            <div class="mb-lg-5 mb-md-4 mb-3">
-                                <input type="email" wire:model="email" class="form-control px-1" placeholder="Email ID" required>
+                            <div class="mb-md-4 mb-3">
+                                <input type="email" wire:model="email" class="form-control" placeholder="Email ID" required>
                                 @error('email') 
                                     <span class="invalid-feedback" style="display: block;" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                            <div class="mb-md-4 mb-3 mb-lg-5">
-                                <input type="password" wire:model="password" class="form-control px-1" placeholder="Password" required>
+                            <div class="mb-md-4 mb-3">
+                                <input type="password" wire:model="password" class="form-control" placeholder="Password" required>
                                 @error('password')
                                     <span class="invalid-feedback" style="display: block;" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                            <div class="text-center mb-md-4 mb-3 mb-lg-5">
+                            <div class="text-center mb-md-4 mb-3">
                                 <button wire:click="submit" class="btn btn-secondary px-4">Log In</button>
                             </div>
                         </form>
                         <div class="text-center right_section">
-                            <p class="mb-3">Don't have account? - <a onclick="Livewire.emit('openModal', 'front.register')">Register Now</a></p>
+                            <p class="mb-3">Don't have account? - <a href="javascript:void()" onclick="Livewire.emit('openModal', 'front.register')"><b><u> Register Now</u></b></a></p>
                             <p class="mb-3">or</p>
                             <a href="{{ url('authorized/google') }}"><img class="img-fluid" src="{{ asset('frontend/images/Googel_icon.png') }}" alt="google_icon"></a>
                         </div>

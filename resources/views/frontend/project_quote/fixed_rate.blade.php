@@ -13,15 +13,17 @@
                 <div class="cutom_form">
 			        {{ Form::open(['url' => route('front.fixed-rate.store'), 'class' => 'mt-md-5 mt-3', 'files' => true]) }}
                         <div class="mb-md-4 mb-3">
+                            <h3 class="mb-2">Job Title <span class="text-danger">*</span></h3>
                             {{ Form::text('title', old('title'), ['class' => 'form-control', 'placeholder' => 'Job Title']) }}
                             <span class='text-danger'>{{ $errors->first('title') }}</span>
                         </div>
                         <div class="mb-md-4 mb-3">
+                            <h3 class="mb-2">Technology <span class="text-danger">*</span></h3>
                             {{ Form::select('skills[]', ['' => 'Select'] + $skills, old('skills'), ['class' => 'form-select cutom-select multiselect border-0 border-bottom rounded-0 ps-1', 'data-allow-clear' =>"1", 'multiple' => true]) }}
                             <span class='text-danger'>{{ $errors->first('skills') }}</span>
                         </div>
                         <div class="mb-md-4 mb-3">
-                            <h3 class="mb-3">Project Timeline</h3>
+                            <h3 class="mb-2">Project Timeline <span class="text-danger">*</span></h3>
                             <div class="d-flex">
                                 <div class="form-check me-3">
                                     {{Form::radio('timeline','< 3 Months', true, ['class'=>'form-check-input', 'id' => '3_month'])}}
@@ -39,16 +41,16 @@
                             <span class='text-danger'>{{ $errors->first('timeline') }}</span>
                         </div>
                         <div class="mb-md-4 mb-3">
-                            <h3 class="mb-3">Job Description</h3>
+                            <h3 class="mb-2">Job Description <span class="text-danger">*</span></h3>
                             {{ Form::textarea('description', old('description'), ['class' => 'form-control', 'rows' => 5]) }}
                             <span class='text-danger'>{{ $errors->first('description') }}</span>
                         </div>
                             <div class="mb-md-4 mb-3">
-                            <h3 class="mb-3">Estimated Price (optional)</h3>
+                            <h3 class="mb-2">Estimated Price <small class="text-muted">(Price is in Dollor)</small> </h3>
                             {{ Form::number('estimated_price', old('estimated_price'), ['class' => 'form-control', 'placeholder' => 'Estimated Price (optional)']) }}
                         </div>
                         <div class="mb-md-4 mb-3">
-                            <h3 class="mb-3">Payment Milestone</h3>
+                            <h3 class="mb-2">Payment Milestone <span class="text-danger">*</span></h3>
                             <div class="d-flex">
                                 <div class="form-check me-3">
                                     {{Form::radio('payment_type','Weekly', true, ['class'=>'form-check-input', 'id' => 'weekly'])}}
@@ -63,7 +65,7 @@
                             <span class='text-danger'>{{ $errors->first('payment_type') }}</span>
                         </div>
                         <div class="mb-md-4 mb-3">
-                            <h3 class="mb-3">Upload File(.JPG, .PNG, .MP4, PDF)</h3>
+                            <h3 class="mb-2">Upload File(.JPG, .PNG, .MP4, PDF)</h3>
                             <div class="input-group mb-3">
                                 <label class="btn btn-outline-primary px-4" for="upload">Upload File</label>
                                 {{ Form::file('file', ['class' => 'form-control']) }}

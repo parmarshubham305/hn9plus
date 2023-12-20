@@ -12,15 +12,9 @@
         </span>
     </button>
     <div class="collapse navbar-collapse h-100" id="navbarNav">
-        <ul class="navbar-nav mx-auto">
+        <ul class="navbar-nav ms-auto">
             <li class="nav-item">
                 <a class="nav-link active" href="{{ route('front.dashboard.index') }}">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Our Site</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Our Service </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">About us</a>
@@ -30,23 +24,23 @@
             </li>
         </ul>
     </div>
-    <ul class="list-unstyled list-inline d-md-inline-block d-none mb-0 nav-icons">
-        <li class="list-inline-item search">
+    <ul class="list-unstyled list-inline d-md-inline-block d-none mb-0 nav-icons ps-md-4 ps-3">
+        <!-- <li class="list-inline-item search">
             <a class="nav-link search-btn" href="#"><span class="fa-lg icon-search custom"></span></a>
             <span class="search-bar">
                 <input class="form-control border " type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-primary rounded-0" type="submit"><span class="fa-lg icon-Search custom ms-0 fs-6"></span></button>
             </span>
-        </li>
+        </li> -->
         <li class="list-inline-item">
-            <a class="nav-link" href="{{ route('front.chat') }}"><span class="fa-lg icon-Chat custom"></span></a>
+            <a class="nav-link" href="{{ route('front.chat') }}"><span class="fa-lg icon-Chat custom fw-bold"></span></a>
         </li>
-        <li class="list-inline-item">
+        <!-- <li class="list-inline-item">
             <a class="nav-link" href="#"><span class="fa-lg icon-cart custom"></span></a>
-        </li>
+        </li> -->
         <li class="list-inline-item">
             @if(!$user)
-                <a class="nav-link" onclick="Livewire.emit('openModal', 'front.login')"><span class="fa-lg icon-user custom"></span></a>
+                <a class="nav-link" href="javascript:void()" onclick="Livewire.emit('openModal', 'front.login')"><span class="fa-lg icon-user custom"></span></a>
             @else
                 <a href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="nav-link">
                     <span class="fa-lg icon-user custom"> {{ Auth::user()->first_name }}, Logout</span>
