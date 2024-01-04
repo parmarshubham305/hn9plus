@@ -91,7 +91,7 @@ class FixedRateFormJob
             $message .= '<p class="mb-1"><strong>Estimated Price: </strong><span class="mb-0">'.$data['estimated_price'].'</span></p>'; 
             $message .= '<p class="mb-1"><strong>Payment Milestone: </strong><span class="mb-0">'.$data['timeline'].'</span></p>'; 
             if(!empty($data['file']))
-                $message .= '<p class="mb-1"><strong>Upload File: </strong><span class="mb-0"><a href="'.public_path($data['file']).'"><u>File</u></a></span></p>';
+                $message .= '<p class="mb-1"><strong>Upload File: </strong><span class="mb-0"><a href="'. $data['file'] .'"><u>File</u></a></span></p>';
             $message .= '<br><br><br>';
             $message .= '<p class="mb-1"><strong class="text-danger">Note: </strong>Personal manager will contact you in few minute</p>'; 
             

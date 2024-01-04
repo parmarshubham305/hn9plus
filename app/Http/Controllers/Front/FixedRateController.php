@@ -47,7 +47,9 @@ class FixedRateController extends Controller
 
         $created = Project::where('user_id', \Auth::user()->id)->orderBy('id', 'DESC')->first();
  
-        return redirect()->route('front.hire.resource', ['fixed-rate',$created['id']])->with('message', 'Record Saved Successfully.')
+        // return redirect()->route('front.hire.resource', ['fixed-rate',$created['id']])->with('message', 'Record Saved Successfully.')
+        //     ->with('type', 'success');
+        return redirect()->route('front.chat')->with('message', 'Record Saved Successfully.')
             ->with('type', 'success');
     }
 

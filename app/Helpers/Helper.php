@@ -27,7 +27,7 @@ class Helper
         return implode(', ', $skills);
     }
 
-    public function seoContent() {
+    public static function seoContent() {
         $route = \Request::route()->getName();
         $content  = SEO::where('path', $route)->first();
         
